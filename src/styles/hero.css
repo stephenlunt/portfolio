@@ -1,0 +1,293 @@
+#container {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  height: 350px;
+  max-width: 800px;
+  z-index: 99;
+}
+
+#screen {
+  position: absolute;
+  bottom: 90px;
+  z-index: -2;
+  height: 220px;
+  aspect-ratio: 16/9;
+  background-color: #71717a;
+  border: 1px solid #71717a;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  #screen {
+    height: 170px;
+  }
+}
+
+#innerscreen {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  height: 90%;
+  width: 95%;
+  background-color: black;
+}
+
+#dummycode {
+  padding: 10px;
+  font-size: 6px;
+  font-family: monospace;
+  color: #71f34a;
+}
+
+.codeline {
+  font-family: monospace;
+  visibility: hidden;
+  overflow: hidden;
+  border-right: 0.1em solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  animation:
+    typing 2s steps(40, end) forwards,
+    blink 0.75s step-end;
+  animation-delay: 2.5s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    visibility: visible;
+  }
+  to {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(185, 185, 185);
+  }
+}
+
+#person {
+  position: absolute;
+  bottom: 20px;
+  height: 150px;
+  width: 130px;
+  background-color: #6a63f6;
+  border: 3px solid #6a63f6;
+  border-radius: 50px 50px 20px 20px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0 54px 55px,
+    rgba(0, 0, 0, 0.1) 0 -12px 30px,
+    rgba(0, 0, 0, 0.3) 0 4px 6px,
+    rgba(0, 0, 0, 0.5) 0 12px 13px,
+    rgba(0, 0, 0, 0.2) 0 -3px 5px;
+}
+
+#leftarm {
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  z-index: -1;
+  height: 115px;
+  width: 30px;
+  rotate: 15deg;
+  background-color: #6a63f6;
+  border: 3px solid #6a63f6;
+  border-radius: 20px 5px 5px 25px;
+}
+
+#rightarm {
+  position: absolute;
+  right: -20px;
+  top: 5px;
+  z-index: -1;
+  height: 115px;
+  width: 30px;
+  rotate: -15deg;
+  background-color: #6a63f6;
+  border: 3px solid #6a63f6;
+  border-radius: 5px 20px 25px 5px;
+}
+
+#head {
+  position: absolute;
+  top: -75px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: -1;
+  height: 80px;
+  width: 70px;
+  background-color: #f5a89b;
+  border: 3px solid #f5a89b;
+  border-radius: 70%;
+  animation: headbounce 2s infinite;
+}
+
+@keyframes headbounce {
+  0%,
+  100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+#hair {
+  position: absolute;
+  top: -5px;
+  left: -4px;
+  right: 0;
+  margin-inline: auto;
+  height: 70px;
+  width: 73px;
+  background-color: #4b3529;
+  border: 3px solid transparent;
+  border-radius: 25px 25px 40px 40px;
+}
+
+#desk {
+  position: absolute;
+  bottom: 50px;
+  z-index: -2;
+  background-color: #715462;
+  width: 90%;
+  height: 7px;
+}
+
+#mug {
+  position: absolute;
+  bottom: 5px;
+  left: 15%;
+  height: 30px;
+  width: 30px;
+  background-color: #fffbec;
+  border: 2px solid #bc977b;
+  border-radius: 2px 2px 7px 7px;
+}
+
+@media screen and (max-width: 400px) {
+  #mug {
+    left: 5%;
+  }
+}
+
+#mugshadow {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 0 0 5px;
+}
+
+#mughandle {
+  position: absolute;
+  right: -10px;
+  top: 2px;
+  height: 15px;
+  width: 10px;
+  border: 3px solid #bc977b;
+  border-radius: 0 10px 10px 0;
+}
+
+#lampbase {
+  position: absolute;
+  right: 5%;
+  bottom: 5px;
+  height: 10px;
+  width: 50px;
+  background-color: #f59e0b;
+}
+
+/* Hide the lamp on smaller screen sizes */
+@media screen and (max-width: 400px) {
+  #lampbase {
+    display: none;
+  }
+}
+
+#switch {
+  position: absolute;
+  bottom: 2px;
+  left: 7px;
+  z-index: -1;
+  height: 16px;
+  width: 5px;
+  background-color: #d97706;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+#lowerarm {
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  height: 70px;
+  width: 7px;
+  rotate: 7deg;
+  z-index: -1;
+  background-color: #d97706;
+  border: 1px solid #d97706;
+  border-radius: 2px;
+}
+
+#upperarm {
+  position: absolute;
+  bottom: 67px;
+  left: 20px;
+  height: 70px;
+  width: 7px;
+  rotate: -15deg;
+  z-index: -1;
+  background-color: #d97706;
+}
+
+#lamphouse {
+  position: absolute;
+  bottom: 125px;
+  left: 7px;
+  height: 17px;
+  width: 17px;
+  rotate: -30deg;
+  background-color: #f59e0b;
+  border: 1px solid #f59e0b;
+  border-radius: 0 10px 10px 0;
+}
+
+#lamphead {
+  position: absolute;
+  bottom: 104px;
+  left: -27px;
+  rotate: 50deg;
+  border-bottom: 40px solid #f59e0b;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+#lampshadow {
+  position: absolute;
+  bottom: 22px;
+  left: -80px;
+  rotate: 50deg;
+  z-index: -2;
+  border-bottom: 140px solid rgba(255, 255, 214, 0.2);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+}

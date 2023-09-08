@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-lg;
+  }
+
+  a {
+    @apply underline underline-offset-4 decoration-zinc-700 decoration-2;
+  }
+
+  a:hover,
+  a:focus {
+    @apply decoration-zinc-400 transition-all duration-300;
+  }
+
+  img {
+    @apply inline-block;
+  }
+}
+
+@layer components {
+  .menu-link {
+    @apply no-underline;
+  }
+
+  .menu-link:hover,
+  .menu-link:active {
+    @apply underline underline-offset-4 decoration-zinc-400 decoration-2 transition-all duration-300;
+  }
+
+  .handwave {
+    animation: wave 2s infinite;
+  }
+
+  @keyframes wave {
+    0% {
+      rotate: -10deg;
+    }
+
+    50% {
+      rotate: 10deg;
+    }
+
+    100% {
+      rotate: -10deg;
+    }
+  }
+}
