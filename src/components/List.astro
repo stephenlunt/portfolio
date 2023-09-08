@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  listItems: CollectionEntry<"projects">[] | CollectionEntry<"blog">[]
+}
+
+const { listItems } = Astro.props
+---
+
+<ul>
+  {
+    listItems.map((item) => (
+      <li class="pb-10">
+        <div class="flex flex-col md:flex-row justify-between items-baseline">
+          <h2>
+            <a href={`/projects/${item.slug}/`}>{item.data.title}</a>
+          </h2>
+          {item.data.created && (
+            <div class="font-mono">
+              {item.data.created.toLocaleString("default", { month: "short" }) +
+                ", " +
+                item.data.created.getFullYear()}
+            </div>
+          )}
+        </div>
+        <p>{item.data.description}</p>
+      </li>
+    ))
+  }
+</ul>
