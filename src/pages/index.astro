@@ -1,20 +1,30 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+
+import MainLayout from "../layouts/MainLayout.astro"
+import PageHero from "../components/PageHero"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-		</main>
-		<Footer />
-	</body>
-</html>
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <PageHero client:load />
+
+  <div
+    class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto mt-12 p-6 rounded-md border border-zinc-700"
+  >
+    <img
+      src="/avatar.jpeg"
+      alt="avatar"
+      class="rounded-full w-32 h-32 border border-zinc-700"
+    />
+
+    <p class="inline-block my-auto text-center sm:text-left">
+      <!-- TODO: fix hand wave animation -->
+       Hey, I'm Stephen <span class="handwave">👋</span> I'm a Software Engineer
+      working at <a
+        href="https://www.marksandspencer.com/"
+        target="_blank"
+        rel="noopener noreferrer">M&S</a
+      > in London.
+    </p>
+  </div>
+</MainLayout>
