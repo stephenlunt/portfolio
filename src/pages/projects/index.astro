@@ -5,13 +5,13 @@ import { getCollection } from "astro:content"
 import MainLayout from "../../layouts/MainLayout.astro"
 import List from "../../components/List.astro"
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.created.valueOf() - b.data.created.valueOf()
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.created!.valueOf() - a.data.created!.valueOf()
 )
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <h1 class="text-center py-4">Blog</h1>
+  <h1 class="text-center py-8">My Projects</h1>
 
-  <List listItems={posts} />
+  <List listItems={projects} />
 </MainLayout>
