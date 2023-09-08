@@ -1,0 +1,80 @@
+---
+import "@fontsource-variable/inter"
+
+import "../styles/base.css"
+
+const word = "Di"
+const valid = true
+const color = "text-green-600"
+const meaning = `Di is a prefix which denotes <span class="font-extrabold">two or double</span>.`
+const score = 3
+---
+
+<html lang="en">
+  <head>
+    <title>Word Infographic</title>
+    <script>
+      import html2canvas from "html2canvas"
+
+      html2canvas(document.querySelector("#capture")).then((canvas) => {
+        document.body.appendChild(canvas)
+      })
+    </script>
+  </head>
+
+  <body class="h-full w-full bg-black my-4 font-semibold tracking-wider">
+    <main
+      id="capture"
+      class="flex flex-col mx-auto bg-[#eaeff8] w-[1280px] h-[720px] px-16 pt-24 pb-4 bg-grid-gray-300 mb-4"
+    >
+      <h1 class="text-[80px] pb-16 font-bold">
+        Is <span class={`${color} drop-shadow-md`}>{word}</span> a Scrabble
+        Word?
+      </h1>
+
+      {
+        valid ? (
+          <h2 class="text-[48px] font-bold">
+            Yes, {word} is <span class={`${color} drop-shadow-md`}>valid</span>{" "}
+            in Scrabble
+          </h2>
+        ) : (
+          <h2 class="text-[48px] font-bold">
+            No, {word} is{" "}
+            <span class={`${color} drop-shadow-md`}>not valid</span> in Scrabble
+          </h2>
+        )
+      }
+
+      <ul class="flex flex-col gap-6 pt-32 text-[32px] list-disc list-inside">
+        <li><Fragment set:html={meaning} /></li>
+        {
+          valid && (
+            <li>
+              It scores <span class="font-extrabold">{score} points</span> in
+              Scrabble
+            </li>
+          )
+        }
+      </ul>
+
+      <div class="text-[32px] mt-auto mx-auto">
+        <span class="text-[#079669]">scrabblechecker</span>.com
+      </div>
+
+      <!-- Circles -->
+      <div
+        class="absolute flex justify-center items-center top-[480px] left-[920px] h-[120px] aspect-square bg-white z-10 rounded-xl border-2 border-black shadow-md rotate-[-8deg]"
+      >
+        <div class="relative text-[96px]">{word.charAt(0).toUpperCase()}</div>
+        <span class="absolute bottom-0 right-2 text-[18px]">4</span>
+      </div>
+      <div
+        class="absolute flex justify-center items-center top-[458px] left-[1060px] h-[120px] aspect-square bg-white z-10 rounded-xl border-2 border-black shadow-md rotate-[-8deg]"
+      >
+        <div class="relative text-[96px]">{word.charAt(1).toUpperCase()}</div>
+        <span class="absolute bottom-0 right-2 text-[18px]">1</span>
+      </div>
+    </main>
+  </body>
+</html>
