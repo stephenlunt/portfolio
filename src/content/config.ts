@@ -18,17 +18,22 @@ const blog = defineCollection({
 })
 
 const projects = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    heroImage: z.string().optional(),
-    heroAlt: z.string().optional(),
-    created: z
-      .string()
-      .optional()
-      .transform((str) => (str ? new Date(str) : undefined)),
-    major: z.boolean().optional()
-  })
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      heroImage: image()
+        .refine((img) => img.width >= 1080, {
+          message: "Hero image must be at least 1080 pixels wide!"
+        })
+        .optional(),
+      heroAlt: z.string().optional(),
+      created: z
+        .string()
+        .optional()
+        .transform((str) => (str ? new Date(str) : undefined)),
+      featured: z.boolean().optional()
+    })
 })
 
 export const collections = { blog: blog, projects: projects }

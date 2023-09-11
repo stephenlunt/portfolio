@@ -1,13 +1,33 @@
+#canvas {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  height: 450px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#canvas > div {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  z-index: -10;
+  font-size: 16px;
+}
+
+#wrapper {
+  padding-top: 100px;
+}
+
 #container {
   position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 1rem 0;
   height: 350px;
   max-width: 800px;
-  z-index: 99;
+  z-index: 30;
 }
 
 #screen {

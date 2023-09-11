@@ -13,34 +13,39 @@ import {
   SiNextdotjs,
   SiFlask,
   SiSqlite,
-  SiTypescript
+  SiTypescript,
+  SiCloudflare,
+  SiRedis
 } from "react-icons/si"
 import { FaCode } from "react-icons/fa"
 
 export enum ProjectStackList {
-  Python,
-  JavaScript,
-  jQuery,
-  HTML,
-  CSS,
-  Docker,
-  Postgres,
-  nginx,
-  Django,
-  React,
-  TailwindCSS,
-  NextJs,
-  Flask,
-  SQLite,
-  TypeScript
+  Python = "Python",
+  JavaScript = "JavaScript",
+  jQuery = "jQuery",
+  HTML = "HTML",
+  CSS = "CSS",
+  Docker = "Docker",
+  Postgres = "Postgres",
+  nginx = "nginx",
+  Django = "Django",
+  React = "React",
+  TailwindCSS = "TailwindCSS",
+  NextJs = "NextJs",
+  Flask = "Flask",
+  SQLite = "SQLite",
+  TypeScript = "TypeScript",
+  Cloudflare = "Cloudflare",
+  Redis = "Redis"
 }
 
 type Props = { tech: ProjectStackList }
 
 export function StackIcon({ tech }: Props) {
   return (
-    <div className="bg-green-500/80">
+    <div className="flex flex-row flex-nowrap items-center gap-2 bg-zinc-900/30 max-w-fit px-2 py-1 border border-zinc-700 rounded-md">
       <IconSwitcher tech={tech} />
+      <span>{tech}</span>
     </div>
   )
 }
@@ -77,6 +82,10 @@ function IconSwitcher({ tech }: Props): React.ReactNode {
       return <SiSqlite />
     case ProjectStackList.TypeScript:
       return <SiTypescript />
+    case ProjectStackList.Cloudflare:
+      return <SiCloudflare />
+    case ProjectStackList.Redis:
+      return <SiRedis />
     default:
       return <FaCode />
   }

@@ -4,37 +4,23 @@ import "@fontsource-variable/inter"
 import type { CollectionEntry } from "astro:content"
 
 import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
+import Header from "../components/Header.tsx"
 
 type Props = CollectionEntry<"blog">["data"]
 
 const { title, description, created, updated, heroImage } = Astro.props
 ---
 
-<html lang="en">
+<html lang="en-GB">
   <head>
     <BaseHead title={title} description={description} />
   </head>
 
-  <body>
-    <Header />
-    <main>
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <h1>{title}</h1>
-            <hr />
-          </div>
-          <slot />
-        </div>
-      </article>
+  <body class="bg-zinc-800 text-zinc-100">
+    <Header client:load />
+
+    <main class="max-w-3xl mx-auto pt-16 px-4 z-10">
+      <slot />
     </main>
   </body>
 </html>

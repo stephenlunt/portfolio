@@ -3,9 +3,10 @@ import type { CollectionEntry } from "astro:content"
 
 interface Props {
   listItems: CollectionEntry<"projects">[] | CollectionEntry<"blog">[]
+  slugPrefix: string
 }
 
-const { listItems } = Astro.props
+const { listItems, slugPrefix } = Astro.props
 ---
 
 <ul>
@@ -14,7 +15,7 @@ const { listItems } = Astro.props
       <li class="pb-10">
         <div class="flex flex-col md:flex-row justify-between items-baseline">
           <h2>
-            <a href={`/projects/${item.slug}/`}>{item.data.title}</a>
+            <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
           {item.data.created && (
             <div class="font-mono">

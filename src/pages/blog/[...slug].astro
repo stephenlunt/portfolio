@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content"
+import { type CollectionEntry, getCollection } from "astro:content"
 import BlogLayout from "../../layouts/BlogLayout.astro"
 
 export async function getStaticPaths() {
@@ -13,8 +13,31 @@ type Props = CollectionEntry<"blog">
 
 const post = Astro.props
 const { Content } = await post.render()
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+}
 ---
 
 <BlogLayout {...post.data}>
-  <Content />
+  <article class="default-spacing">
+    <h1 class="text-center pt-6">{post.data.title}</h1>
+    <div
+      class="bg-zinc-900/30 flex flex-row items-baseline gap-2 px-4 my-4 rounded-md border border-zinc-700"
+    >
+      <span>📆</span>
+      <p class="font-mono !m-2">
+        {
+          post.data.updated
+            ? post.data.updated.toLocaleString("en-GB", dateOptions)
+            : post.data.created.toLocaleString("en-GB", dateOptions)
+        }
+      </p>
+    </div>
+
+    <Content />
+  </article>
 </BlogLayout>

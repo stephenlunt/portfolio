@@ -1,7 +1,7 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import { getCollection } from "astro:content"
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import MainLayout from "../../layouts/MainLayout.astro"
 import List from "../../components/List.astro"
 
@@ -13,5 +13,5 @@ const projects = (await getCollection("projects")).sort(
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <h1 class="text-center py-8">My Projects</h1>
 
-  <List listItems={projects} />
+  <List listItems={projects} slugPrefix="projects" />
 </MainLayout>

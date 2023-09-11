@@ -1,15 +1,19 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import { Image } from "astro:assets"
+import { getCollection } from "astro:content"
 
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import MainLayout from "../layouts/MainLayout.astro"
-import PageHero from "../components/PageHero"
+
+const featuredProjects = (await getCollection("projects"))
+  .filter((p) => p.data.featured === true)
+  .sort((a, b) => b.data.created!.valueOf() - a.data.created!.valueOf())
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <PageHero client:load />
-
+  <!-- Welcome hero -->
   <div
-    class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto mt-12 p-6 rounded-md border border-zinc-700"
+    class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto p-6 rounded-md border border-zinc-700"
   >
     <img
       src="/avatar.jpeg"
@@ -27,4 +31,34 @@ import PageHero from "../components/PageHero"
       > in London.
     </p>
   </div>
+
+  <!-- Featured Projects -->
+  <section class="my-16">
+    <h1 class="text-center pb-6">Featured Projects</h1>
+    <ul class="flex flex-col gap-4">
+      {
+        featuredProjects.map((project) => (
+          <li class="flex flex-col xs:flex-row gap-4">
+            <div class="max-w-full xs:max-w-[240px]">
+              {project.data.heroImage && project.data.heroAlt && (
+                <Image
+                  src={project.data.heroImage}
+                  alt={project.data.heroAlt}
+                  width={480}
+                  height={320}
+                  class:list={"rounded-md"}
+                />
+              )}
+            </div>
+            <div class="flex flex-col gap-2 py-1">
+              <h2>
+                <a href={`/projects/${project.slug}/`}>{project.data.title}</a>
+              </h2>
+              <p>{project.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </MainLayout>
