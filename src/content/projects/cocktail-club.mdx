@@ -1,0 +1,50 @@
+---
+title: "Cocktail Club"
+description: "A cocktail recipe website built with Flask"
+heroImage: "@assets/imgs/projects/cocktail-club-homepage.jpeg"
+heroAlt: "Cocktail Club homepage"
+created: "01 February 2022"
+featured: false
+---
+
+import { StackList, ProjectStackList } from "../../components/StackIcon"
+import ExternalLink from "../../components/ExternalLink"
+import RoundedImage from "../../components/RoundedImage.astro"
+
+import ccHomepage from "../../assets/imgs/projects/cocktail-club-homepage.jpeg"
+import ccDrinkpage from "../../assets/imgs/projects/cocktail-club-drinkpage.jpeg"
+import ccLeaderboard from "../../assets/imgs/projects/cocktail-club-leaderboard.jpeg"
+
+The Cocktail Club is a Flask web application I created to form my final project
+submission for <ExternalLink href="https://pll.harvard.edu/course/cs50-introduction-computer-science" text="CS50s Introduction to Computer Science" />.
+It is simply a website for discovering cocktail recipes.
+
+Some features of the site include: searching for cocktails by name or ingredient,
+user login and registration, and liking, disliking and favouriting cocktails.
+
+As my first full-stack software project, I used this opportunity to gain
+experience working with an external public API (I chose <ExternalLink href="https://www.thecocktaildb.com/api.php" text="TheCocktailDB" />).
+I could then focus on building a user interface to display data fetched from the API.
+
+## Tech Stack
+
+<StackList
+  stack={[
+    ProjectStackList.Python,
+    ProjectStackList.Flask,
+    ProjectStackList.JavaScript,
+    ProjectStackList.jQuery,
+    ProjectStackList.Html,
+    ProjectStackList.TailwindCSS,
+    ProjectStackList.SQLite
+  ]}
+/>
+
+## Showcase
+
+<RoundedImage src={ccHomepage} alt="The Cocktail Clubs Home page" />
+<RoundedImage src={ccDrinkpage} alt="The Cocktail Clubs Drinks page" />
+<RoundedImage
+  src={ccLeaderboard}
+  alt="The Cocktail Clubs Drinks Leaderboard page"
+/>
