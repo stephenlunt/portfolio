@@ -2,7 +2,6 @@
 import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import MainLayout from "../layouts/MainLayout.astro"
 
 const featuredProjects = (await getCollection("projects"))
@@ -10,7 +9,7 @@ const featuredProjects = (await getCollection("projects"))
   .sort((a, b) => b.data.created!.valueOf() - a.data.created!.valueOf())
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
   <!-- Welcome hero -->
   <div
     class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto p-6 rounded-md border border-zinc-700"
@@ -24,11 +23,7 @@ const featuredProjects = (await getCollection("projects"))
     <p class="inline-block my-auto text-center sm:text-left">
       <!-- TODO: fix hand wave animation -->
        Hey, I'm Stephen <span class="handwave">👋</span> I'm a Software Engineer
-      working at <a
-        href="https://www.marksandspencer.com/"
-        target="_blank"
-        rel="noopener noreferrer">M&S</a
-      > in London.
+      working in London.
     </p>
   </div>
 

@@ -7,7 +7,7 @@ export default function PageHero() {
   const [letterDrop, setLetterDrop] = useState<string[]>(
     new Array(Math.floor(window.innerWidth / 16 / 2)).fill("_")
   )
-  const [lightOn, setLightOn] = useState<boolean>(true)
+  const [lightOn, setLightOn] = useState(true)
 
   useEffect(() => {
     window.addEventListener("resize", handleResize)
@@ -25,7 +25,8 @@ export default function PageHero() {
 
   return (
     <>
-      <div id="canvas">
+      {/* TODO: Fix bug with flickering hero text */}
+      {/* <div id="canvas">
         {letterDrop &&
           letterDrop.map((_, index) => (
             <AnimatePresence key={`${index}-drop`}>
@@ -46,7 +47,7 @@ export default function PageHero() {
               </motion.div>
             </AnimatePresence>
           ))}
-      </div>
+      </div> */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
