@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { MdMenu, MdClose } from "react-icons/md"
+import { IconContext } from "react-icons"
+import { IoMdMenu, IoMdClose } from "react-icons/io"
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,9 +16,11 @@ export default function Header() {
           <a href="/" className="menu-link">
             Home
           </a>
-          <button onClick={toggleMenuOpen} className="xs:hidden">
-            {menuOpen ? <MdClose /> : <MdMenu />}
-          </button>
+          <IconContext.Provider value={{ size: "20px" }}>
+            <button onClick={toggleMenuOpen} className="xs:hidden">
+              {menuOpen ? <IoMdClose /> : <IoMdMenu />}
+            </button>
+          </IconContext.Provider>
         </div>
         <div
           className={`${

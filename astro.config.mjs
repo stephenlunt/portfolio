@@ -14,5 +14,11 @@ export default defineConfig({
     }),
     react(),
     mdx()
-  ]
+  ],
+  // https://github.com/withastro/astro/issues/7629
+  vite: {
+    ssr: {
+      noExternal: ["react-icons"]
+    }
+  }
 })
