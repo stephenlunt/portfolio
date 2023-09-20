@@ -1,5 +1,4 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import { getCollection } from "astro:content"
 
 import MainLayout from "../../layouts/MainLayout.astro"
@@ -10,8 +9,7 @@ const posts = (await getCollection("blog")).sort(
 )
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainLayout title="Blog" description="Explore my blog posts">
   <h1 class="text-center py-4">Blog</h1>
-
   <List listItems={posts} slugPrefix="blog" />
 </MainLayout>
