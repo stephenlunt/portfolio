@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import "../styles/hero.css"
-
 export default function PageHero() {
   const [letterDrop, setLetterDrop] = useState<string[]>(
     new Array(Math.floor(window.innerWidth / 16 / 2)).fill("_")
