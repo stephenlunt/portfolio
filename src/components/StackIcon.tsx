@@ -1,3 +1,5 @@
+import React from "react"
+import { FaCode } from "react-icons/fa"
 import {
   SiPython,
   SiJavascript,
@@ -15,16 +17,17 @@ import {
   SiSqlite,
   SiTypescript,
   SiCloudflare,
-  SiRedis
+  SiRedis,
+  SiAstro,
+  SiMarkdown
 } from "react-icons/si"
-import { FaCode } from "react-icons/fa"
 
 export enum ProjectStackList {
   Python = "Python",
   JavaScript = "JavaScript",
   jQuery = "jQuery",
-  HTML = "HTML",
-  CSS = "CSS",
+  Html = "HTML",
+  Css = "CSS",
   Docker = "Docker",
   Postgres = "Postgres",
   nginx = "nginx",
@@ -36,21 +39,34 @@ export enum ProjectStackList {
   SQLite = "SQLite",
   TypeScript = "TypeScript",
   Cloudflare = "Cloudflare",
-  Redis = "Redis"
+  Redis = "Redis",
+  Astro = "Astro",
+  Markdown = "Markdown"
 }
 
-type Props = { tech: ProjectStackList }
+type StackListProps = { stack: ProjectStackList[] }
+type StackIconProps = { tech: ProjectStackList }
 
-export function StackIcon({ tech }: Props) {
+export function StackList({ stack }: StackListProps) {
   return (
-    <div className="flex flex-row flex-nowrap items-center gap-2 bg-zinc-900/30 max-w-fit px-2 py-1 border border-zinc-700 rounded-md">
-      <IconSwitcher tech={tech} />
-      <span>{tech}</span>
-    </div>
+    <ul className="stack-list">
+      {stack.map((tech, index) => (
+        <StackIcon tech={tech} key={`stack-item-${index}`} />
+      ))}
+    </ul>
   )
 }
 
-function IconSwitcher({ tech }: Props): React.ReactNode {
+function StackIcon({ tech }: StackIconProps) {
+  return (
+    <li className="flex flex-row flex-nowrap items-center gap-2 bg-zinc-900/30 border border-zinc-700 max-w-fit px-2 py-1 rounded-md cursor-default">
+      <IconSwitcher tech={tech} />
+      <span>{tech}</span>
+    </li>
+  )
+}
+
+function IconSwitcher({ tech }: StackIconProps): React.ReactNode {
   switch (tech) {
     case ProjectStackList.Python:
       return <SiPython />
@@ -58,9 +74,9 @@ function IconSwitcher({ tech }: Props): React.ReactNode {
       return <SiJavascript />
     case ProjectStackList.jQuery:
       return <SiJquery />
-    case ProjectStackList.HTML:
+    case ProjectStackList.Html:
       return <SiHtml5 />
-    case ProjectStackList.CSS:
+    case ProjectStackList.Css:
       return <SiCss3 />
     case ProjectStackList.Docker:
       return <SiDocker />
@@ -86,6 +102,10 @@ function IconSwitcher({ tech }: Props): React.ReactNode {
       return <SiCloudflare />
     case ProjectStackList.Redis:
       return <SiRedis />
+    case ProjectStackList.Astro:
+      return <SiAstro />
+    case ProjectStackList.Markdown:
+      return <SiMarkdown />
     default:
       return <FaCode />
   }

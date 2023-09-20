@@ -9,11 +9,11 @@ interface Props {
 const { listItems, slugPrefix } = Astro.props
 ---
 
-<ul>
+<ul class="!list-none">
   {
     listItems.map((item) => (
       <li class="pb-10">
-        <div class="flex flex-col md:flex-row justify-between items-baseline">
+        <div class="flex flex-col xs:flex-row justify-between items-baseline pb-2">
           <h2>
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>

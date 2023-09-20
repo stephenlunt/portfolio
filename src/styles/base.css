@@ -20,12 +20,20 @@
     @apply decoration-zinc-400 transition-all duration-300;
   }
 
+  ul {
+    @apply list-disc list-inside;
+  }
+
   img {
     @apply inline-block;
   }
 
   .default-spacing p {
     @apply my-6 leading-7;
+  }
+
+  .default-spacing h2 {
+    @apply my-4 leading-7;
   }
 }
 
@@ -55,5 +63,9 @@
     100% {
       rotate: -10deg;
     }
+  }
+
+  .stack-list {
+    @apply flex flex-row flex-wrap gap-2 my-2 pb-4;
   }
 }
