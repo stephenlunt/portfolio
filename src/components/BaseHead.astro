@@ -1,4 +1,7 @@
 ---
+import { ViewTransitions } from "astro:transitions"
+
+import { SITE_TITLE } from "src/consts"
 import "../styles/base.css"
 
 interface Props {
@@ -9,7 +12,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props
+const { title, description, image = "/placeholder-image.jpeg" } = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -17,17 +20,23 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="/favicon.ico" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="theme-color" content="#111827" />
+<meta
+  name="robots"
+  content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+/>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
+<title>{title} | {SITE_TITLE}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
+<meta property="og:site_name" content="Stephen Lunt" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
@@ -40,3 +49,5 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<ViewTransitions />
