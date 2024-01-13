@@ -5,7 +5,7 @@ module.exports = {
   endOfLine: "lf",
   semi: false,
   tabWidth: 2,
-  trailingComma: "none",
+  trailingComma: "all",
   printWidth: 80,
   pluginSearchDirs: [__dirname],
   plugins: [require.resolve("prettier-plugin-astro")],
@@ -13,8 +13,8 @@ module.exports = {
     {
       files: "*.astro",
       options: {
-        parser: "astro"
-      }
-    }
-  ]
+        parser: "astro",
+      },
+    },
+  ],
 }

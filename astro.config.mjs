@@ -10,15 +10,15 @@ export default defineConfig({
   integrations: [
     sitemap(),
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: false,
     }),
     react(),
-    mdx()
+    mdx(),
   ],
   // https://github.com/withastro/astro/issues/7629
   vite: {
     ssr: {
-      noExternal: ["react-icons"]
-    }
-  }
+      noExternal: ["react-icons"],
+    },
+  },
 })
