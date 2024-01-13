@@ -19,7 +19,7 @@ import {
   SiCloudflare,
   SiRedis,
   SiAstro,
-  SiMarkdown
+  SiMarkdown,
 } from "react-icons/si"
 
 export enum ProjectStackList {
@@ -41,7 +41,7 @@ export enum ProjectStackList {
   Cloudflare = "Cloudflare",
   Redis = "Redis",
   Astro = "Astro",
-  Markdown = "Markdown"
+  Markdown = "Markdown",
 }
 
 type StackListProps = { stack: ProjectStackList[] }

@@ -36,7 +36,7 @@ export default function Header() {
           <a
             href="https://github.com/stephenlunt"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="menu-link"
           >
             GitHub

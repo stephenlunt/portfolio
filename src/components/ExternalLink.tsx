@@ -10,7 +10,7 @@ export default function ExternalLink({ href, text }: Props) {
     <a
       href={href}
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       className="inline-flex items-center gap-1"
     >
       {text} <BiLinkExternal />
