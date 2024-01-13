@@ -1,0 +1,391 @@
+<div id="wrapper">
+  <div id="container">
+    <div id="screen">
+      <div id="inner-screen">
+        <div id="dummy-code" class="select-none">
+          <div>
+            <p class="codeline" style={{ animationDelay: "2s" }}>
+              public class HelloWorld &#123;
+            </p>
+            <p class="codeline pl-2" style={{ animationDelay: "4s" }}>
+              public static void main(String[] args) &#123;
+            </p>
+            <p class="codeline pl-4" style={{ animationDelay: "6s" }}>
+              String hello = &quot;Hello! Thank you for visiting my personal
+              website today.&quot;;
+            </p>
+            <p class="codeline pl-4" style={{ animationDelay: "8s" }}>
+              String enjoy = &quot;I hope you enjoy your time here!&quot;;
+            </p>
+            <p class="codeline pl-4" style={{ animationDelay: "10s" }}>
+              System.out.println(hello + enjoy);
+            </p>
+            <p class="codeline pl-2" style={{ animationDelay: "11s" }}>
+              &#125;
+            </p>
+            <p class="codeline" style={{ animationDelay: "12s" }}>&#125;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="person">
+      <div id="left-arm"></div>
+      <div id="person-head">
+        <div id="hair"></div>
+      </div>
+      <div id="right-arm"></div>
+    </div>
+    <div id="desk">
+      <div id="mug">
+        <div id="mug-shadow"></div>
+        <div id="mug-handle"></div>
+      </div>
+      <div id="lamp-base">
+        <div id="switch" style={{ rotate: "-14deg" }}></div>
+        <div id="lower-arm"></div>
+        <div id="upper-arm"></div>
+        <div id="lamp-house"></div>
+        <div id="lamp-head"></div>
+        <div id="lamp-shadow"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    let isLightOn = true
+    const lightSwitch = document.getElementById("switch")
+    const lampShadow = document.getElementById("lamp-shadow")
+
+    lightSwitch.addEventListener("click", () => {
+      if (isLightOn) {
+        console.log("Lights off 🌚")
+        lightSwitch.style.rotate = "14deg"
+        lampShadow.style.display = "none"
+        isLightOn = false
+      } else {
+        console.log("Lights on 💡")
+        lightSwitch.style.rotate = "-14deg"
+        lampShadow.style.display = "block"
+        isLightOn = true
+      }
+    })
+  })
+</script>
+
+<style scoped>
+  #canvas {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: 450px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  #canvas > div {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    z-index: -10;
+    font-size: 16px;
+  }
+
+  #wrapper {
+    padding-top: 100px;
+  }
+
+  #container {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 350px;
+    max-width: 800px;
+    z-index: 30;
+  }
+
+  #screen {
+    position: absolute;
+    bottom: 90px;
+    z-index: -2;
+    height: 220px;
+    aspect-ratio: 16/9;
+    background-color: #71717a;
+    border: 1px solid #71717a;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    #screen {
+      height: 170px;
+    }
+  }
+
+  #inner-screen {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    height: 90%;
+    width: 95%;
+    background-color: black;
+  }
+
+  #dummy-code {
+    padding: 10px;
+    font-size: 6px;
+    font-family: monospace;
+    color: #71f34a;
+  }
+
+  .codeline {
+    font-family: monospace;
+    visibility: hidden;
+    overflow: hidden;
+    border-right: 0.1em solid transparent;
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    animation:
+      typing 2s steps(40, end) forwards,
+      blink 0.75s step-end;
+    animation-delay: 2.5s;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+      visibility: visible;
+    }
+    to {
+      width: 100%;
+      visibility: visible;
+    }
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(185, 185, 185);
+    }
+  }
+
+  #person {
+    position: absolute;
+    bottom: 20px;
+    height: 150px;
+    width: 130px;
+    background-color: #6a63f6;
+    border: 3px solid #6a63f6;
+    border-radius: 50px 50px 20px 20px;
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0 54px 55px,
+      rgba(0, 0, 0, 0.1) 0 -12px 30px,
+      rgba(0, 0, 0, 0.3) 0 4px 6px,
+      rgba(0, 0, 0, 0.5) 0 12px 13px,
+      rgba(0, 0, 0, 0.2) 0 -3px 5px;
+  }
+
+  #left-arm {
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    z-index: -1;
+    height: 115px;
+    width: 30px;
+    rotate: 15deg;
+    background-color: #6a63f6;
+    border: 3px solid #6a63f6;
+    border-radius: 20px 5px 5px 25px;
+  }
+
+  #right-arm {
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    z-index: -1;
+    height: 115px;
+    width: 30px;
+    rotate: -15deg;
+    background-color: #6a63f6;
+    border: 3px solid #6a63f6;
+    border-radius: 5px 20px 25px 5px;
+  }
+
+  #person-head {
+    position: absolute;
+    top: -75px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    z-index: -1;
+    height: 80px;
+    width: 70px;
+    background-color: #f5a89b;
+    border: 3px solid #f5a89b;
+    border-radius: 70%;
+    animation: head-bounce 2s infinite;
+  }
+
+  @keyframes head-bounce {
+    0%,
+    100% {
+      transform: translateY(-5%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  #hair {
+    position: absolute;
+    top: -5px;
+    left: -4px;
+    right: 0;
+    margin-inline: auto;
+    height: 70px;
+    width: 73px;
+    background-color: #4b3529;
+    border: 3px solid transparent;
+    border-radius: 25px 25px 40px 40px;
+  }
+
+  #desk {
+    position: absolute;
+    bottom: 50px;
+    z-index: -2;
+    background-color: #715462;
+    width: 90%;
+    height: 7px;
+  }
+
+  #mug {
+    position: absolute;
+    bottom: 5px;
+    left: 15%;
+    height: 30px;
+    width: 30px;
+    background-color: #fffbec;
+    border: 2px solid #bc977b;
+    border-radius: 2px 2px 7px 7px;
+  }
+
+  @media screen and (max-width: 400px) {
+    #mug {
+      left: 5%;
+    }
+  }
+
+  #mug-shadow {
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0 0 5px;
+  }
+
+  #mug-handle {
+    position: absolute;
+    right: -10px;
+    top: 2px;
+    height: 15px;
+    width: 10px;
+    border: 3px solid #bc977b;
+    border-radius: 0 10px 10px 0;
+  }
+
+  #lamp-base {
+    position: absolute;
+    right: 5%;
+    bottom: 5px;
+    height: 10px;
+    width: 50px;
+    background-color: #f59e0b;
+  }
+
+  /* Hide the lamp on smaller screen sizes */
+  @media screen and (max-width: 400px) {
+    #lamp-base {
+      display: none;
+    }
+  }
+
+  #switch {
+    position: absolute;
+    bottom: 2px;
+    left: 7px;
+    z-index: -1;
+    height: 16px;
+    width: 5px;
+    background-color: #d97706;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+
+  #lower-arm {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    height: 70px;
+    width: 7px;
+    rotate: 7deg;
+    z-index: -1;
+    background-color: #d97706;
+    border: 1px solid #d97706;
+    border-radius: 2px;
+  }
+
+  #upper-arm {
+    position: absolute;
+    bottom: 67px;
+    left: 20px;
+    height: 70px;
+    width: 7px;
+    rotate: -15deg;
+    z-index: -1;
+    background-color: #d97706;
+  }
+
+  #lamp-house {
+    position: absolute;
+    bottom: 125px;
+    left: 7px;
+    height: 17px;
+    width: 17px;
+    rotate: -30deg;
+    background-color: #f59e0b;
+    border: 1px solid #f59e0b;
+    border-radius: 0 10px 10px 0;
+  }
+
+  #lamp-head {
+    position: absolute;
+    bottom: 104px;
+    left: -27px;
+    rotate: 50deg;
+    border-bottom: 40px solid #f59e0b;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
+
+  #lamp-shadow {
+    position: absolute;
+    bottom: 22px;
+    left: -80px;
+    rotate: 50deg;
+    z-index: -2;
+    border-bottom: 140px solid rgba(255, 255, 214, 0.2);
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+  }
+</style>

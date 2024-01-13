@@ -2,7 +2,7 @@
 import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
-import MainLayout from "../layouts/MainLayout.astro"
+import MainLayout from "@layouts/MainLayout.astro"
 
 const featuredProjects = (await getCollection("projects"))
   .filter((p) => p.data.featured === true)
@@ -10,7 +10,6 @@ const featuredProjects = (await getCollection("projects"))
 ---
 
 <MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
-  <!-- Welcome hero -->
   <div
     class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto p-6 rounded-md border border-zinc-700"
   >
@@ -21,13 +20,10 @@ const featuredProjects = (await getCollection("projects"))
     />
 
     <p class="inline-block my-auto text-center sm:text-left">
-      <!-- TODO: fix hand wave animation -->
-       Hey, I'm Stephen <span class="handwave">👋</span> I'm a Software Engineer
-      working in London.
+      Hey, I'm Stephen 👋 I'm a Full Stack Software Engineer working in London.
     </p>
   </div>
 
-  <!-- Featured Projects -->
   <section class="my-16">
     <h1 class="text-center pb-6">Featured Projects</h1>
     <ul class="flex flex-col gap-4">

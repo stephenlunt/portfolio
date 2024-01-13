@@ -5,7 +5,7 @@ import type { CollectionEntry } from "astro:content"
 
 import BaseHead from "../components/BaseHead.astro"
 import Header from "../components/Header.tsx"
-import PageHero from "src/components/PageHero"
+import PageHero from "@components/PageHero.astro"
 
 type Props = CollectionEntry<"projects">["data"]
 
@@ -33,7 +33,7 @@ const isHomePage = Astro.url.pathname === "/" ? true : false
   <body class="bg-zinc-800 text-zinc-100">
     <Header client:load />
 
-    {isHomePage && <PageHero client:load client:only />}
+    {isHomePage && <PageHero />}
     
     <main class="max-w-3xl mx-auto py-16 px-4 z-10">
       <slot />
