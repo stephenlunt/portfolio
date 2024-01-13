@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 
-import MainLayout from "../../layouts/MainLayout.astro"
-import List from "../../components/List.astro"
+import MainLayout from "@layouts/MainLayout.astro"
+import List from "@components/List.astro"
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.created!.valueOf() - a.data.created!.valueOf()
