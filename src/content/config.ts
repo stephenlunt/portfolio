@@ -1,38 +1,30 @@
 import { defineCollection, z } from "astro:content"
 
 const blog = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    created: z
-      .string()
-      .or(z.date())
-      .transform((val) => new Date(val)),
-    updated: z
-      .string()
-      .optional()
-      .transform((str) => (str ? new Date(str) : undefined)),
-    heroImage: z.string().optional(),
-    heroAlt: z.string().optional()
-  })
+  schema: ({ image }) =>
+    z.object({
+      title: z.string().max(60),
+      description: z.string().min(90).max(155),
+      created: z.coerce.date(),
+      updated: z.coerce.date().optional(),
+      heroImage: z.object({
+        url: image(),
+        alt: z.string()
+      })
+    })
 })
 
 const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
-      title: z.string(),
-      description: z.string(),
-      heroImage: image()
-        .refine((img) => img.width >= 1080, {
-          message: "Hero image must be at least 1080 pixels wide!"
-        })
-        .optional(),
-      heroAlt: z.string().optional(),
-      created: z
-        .string()
-        .optional()
-        .transform((str) => (str ? new Date(str) : undefined)),
-      featured: z.boolean().optional()
+      title: z.string().max(60),
+      description: z.string().min(90).max(155),
+      created: z.coerce.date(),
+      featured: z.boolean().default(false),
+      heroImage: z.object({
+        url: image(),
+        alt: z.string()
+      })
     })
 })
 

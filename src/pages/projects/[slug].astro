@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content"
 
 import MainLayout from "@layouts/MainLayout.astro"
 
@@ -16,9 +16,13 @@ const project = Astro.props
 const { Content } = await project.render()
 ---
 
-<MainLayout {...project.data}>
+<MainLayout
+  title={project.data.title}
+  description={project.data.description}
+  image={project.data.heroImage.url.src}
+>
   <article class="default-spacing">
-    <h1 class="text-center py-4">{project.data.title}</h1>
+    <h1 class="text-center pt-6 pb-2">{project.data.title}</h1>
     <Content />
   </article>
 </MainLayout>

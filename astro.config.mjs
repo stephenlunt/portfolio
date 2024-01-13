@@ -1,24 +1,26 @@
-import { defineConfig } from "astro/config"
+import mdx from "@astrojs/mdx"
+import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
-import react from "@astrojs/react"
-import mdx from "@astrojs/mdx"
+import { defineConfig } from "astro/config"
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://stephen-lunt.dev",
   integrations: [
     sitemap(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: false
     }),
     react(),
-    mdx(),
+    mdx()
   ],
-  // https://github.com/withastro/astro/issues/7629
   vite: {
     ssr: {
-      noExternal: ["react-icons"],
-    },
+      // https://github.com/withastro/astro/issues/7629
+      noExternal: ["react-icons"]
+    }
   },
+  redirects: {
+    "/projects/scrabble-checker/": "/projects/word-checker/"
+  }
 })

@@ -1,0 +1,20 @@
+{
+  "cSpell.words": [
+    "astrojs",
+    "bezier",
+    "codeline",
+    "fontsource",
+    "imgs",
+    "keyframes",
+    "nowrap",
+    "println",
+    "quot",
+    "rgba",
+    "tailwindcss",
+    "wordchecker"
+  ],
+  "markdown.extension.toc.levels": "1..2",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+}

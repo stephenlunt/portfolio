@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+type Props = CollectionEntry<"blog">
+
+const { slug, data } = Astro.props
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  thumbnailUrl: data.heroImage.url.src,
+  description: data.description,
+  datePublished: data.created.toISOString(),
+  dateModified: data?.updated?.toISOString() ?? undefined,
+  name: data.title,
+  url: `https://stephen-lunt.dev/blog/${slug}/`,
+  inLanguage: "en-GB",
+  image: {
+    "@type": "ImageObject",
+    url: data.heroImage?.url.src,
+    contentUrl: data.heroImage?.url.src,
+    width: data.heroImage.url.width,
+    height: data.heroImage.url.height,
+    caption: data.heroImage.alt
+  },
+  author: {
+    "@type": "Person",
+    name: "Stephen Lunt",
+    description:
+      "Hey, I'm Stephen. I'm a Full Stack Software Engineer working in London.",
+    url: "https://stephen-lunt.dev"
+  }
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,7 +1,8 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content"
 
-import BlogLayout from "@layouts/BlogLayout.astro"
+import BlogStructuredData from "@components/head/BlogStructuredData.astro"
+import MainLayout from "@layouts/MainLayout.astro"
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog")
@@ -23,7 +24,12 @@ const dateOptions: Intl.DateTimeFormatOptions = {
 }
 ---
 
-<BlogLayout {...post.data}>
+<MainLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.heroImage.url.src}
+>
+  <BlogStructuredData {...post} slot="structured-data" />
   <article class="default-spacing">
     <h1 class="text-center pt-6">{post.data.title}</h1>
     <div
@@ -38,7 +44,6 @@ const dateOptions: Intl.DateTimeFormatOptions = {
         }
       </p>
     </div>
-
     <Content />
   </article>
-</BlogLayout>
+</MainLayout>

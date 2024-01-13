@@ -2,6 +2,8 @@
 import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
+import PageHero from "@components/PageHero.astro"
+import SiteStructuredData from "@components/head/SiteStructuredData.astro"
 import MainLayout from "@layouts/MainLayout.astro"
 
 const featuredProjects = (await getCollection("projects"))
@@ -10,6 +12,8 @@ const featuredProjects = (await getCollection("projects"))
 ---
 
 <MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
+  <SiteStructuredData slot="structured-data" />
+  <PageHero slot="page-hero" />
   <div
     class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto p-6 rounded-md border border-zinc-700"
   >
@@ -18,7 +22,6 @@ const featuredProjects = (await getCollection("projects"))
       alt="avatar"
       class="rounded-full w-32 h-32 border border-zinc-700"
     />
-
     <p class="inline-block my-auto text-center sm:text-left">
       Hey, I'm Stephen 👋 I'm a Full Stack Software Engineer working in London.
     </p>
@@ -30,16 +33,14 @@ const featuredProjects = (await getCollection("projects"))
       {
         featuredProjects.map((project) => (
           <li class="flex flex-col xs:flex-row gap-4">
-            <div class="max-w-full xs:max-w-[240px]">
-              {project.data.heroImage && project.data.heroAlt && (
-                <Image
-                  src={project.data.heroImage}
-                  alt={project.data.heroAlt}
-                  width={480}
-                  height={320}
-                  class:list={"rounded-md"}
-                />
-              )}
+            <div class="max-w-full xs:max-w-[240px] flex-shrink-0">
+              <Image
+                src={project.data.heroImage.url}
+                alt={project.data.heroImage.alt}
+                width={480}
+                height={320}
+                class="rounded-md"
+              />
             </div>
             <div class="flex flex-col gap-2 py-1">
               <h2>

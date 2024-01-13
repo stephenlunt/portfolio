@@ -1,25 +1,25 @@
 import React from "react"
 import { FaCode } from "react-icons/fa"
 import {
-  SiPython,
+  SiAstro,
+  SiCloudflare,
+  SiCss3,
+  SiDjango,
+  SiDocker,
+  SiFlask,
+  SiHtml5,
   SiJavascript,
   SiJquery,
-  SiDjango,
-  SiHtml5,
-  SiCss3,
-  SiDocker,
-  SiPostgresql,
-  SiNginx,
-  SiReact,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiFlask,
-  SiSqlite,
-  SiTypescript,
-  SiCloudflare,
-  SiRedis,
-  SiAstro,
   SiMarkdown,
+  SiNextdotjs,
+  SiNginx,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiRedis,
+  SiSqlite,
+  SiTailwindcss,
+  SiTypescript
 } from "react-icons/si"
 
 export enum ProjectStackList {
@@ -41,7 +41,7 @@ export enum ProjectStackList {
   Cloudflare = "Cloudflare",
   Redis = "Redis",
   Astro = "Astro",
-  Markdown = "Markdown",
+  Markdown = "Markdown"
 }
 
 type StackListProps = { stack: ProjectStackList[] }

@@ -53,25 +53,29 @@
 </div>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    let isLightOn = true
-    const lightSwitch = document.getElementById("switch")
-    const lampShadow = document.getElementById("lamp-shadow")
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      let isLightOn = true
+      const lightSwitch = document.getElementById("switch")
+      const lampShadow = document.getElementById("lamp-shadow")
 
-    lightSwitch.addEventListener("click", () => {
-      if (isLightOn) {
-        console.log("Lights off 🌚")
-        lightSwitch.style.rotate = "14deg"
-        lampShadow.style.display = "none"
-        isLightOn = false
-      } else {
-        console.log("Lights on 💡")
-        lightSwitch.style.rotate = "-14deg"
-        lampShadow.style.display = "block"
-        isLightOn = true
-      }
-    })
-  })
+      lightSwitch.addEventListener("click", () => {
+        if (isLightOn) {
+          console.log("Lights off 🌚")
+          lightSwitch.style.rotate = "14deg"
+          lampShadow.style.display = "none"
+          isLightOn = false
+        } else {
+          console.log("Lights on 💡")
+          lightSwitch.style.rotate = "-14deg"
+          lampShadow.style.display = "block"
+          isLightOn = true
+        }
+      })
+    },
+    { once: true }
+  )
 </script>
 
 <style scoped>
