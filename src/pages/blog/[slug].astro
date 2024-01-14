@@ -3,12 +3,13 @@ import { getCollection, type CollectionEntry } from "astro:content"
 
 import BlogStructuredData from "@components/head/BlogStructuredData.astro"
 import MainLayout from "@layouts/MainLayout.astro"
+import { estimateReadingTime } from "@utils"
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog")
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: post
+    props: post,
   }))
 }
 type Props = CollectionEntry<"blog">
@@ -16,11 +17,13 @@ type Props = CollectionEntry<"blog">
 const post = Astro.props
 const { Content } = await post.render()
 
+const readingTime = estimateReadingTime(post.body)
+
 const dateOptions: Intl.DateTimeFormatOptions = {
   weekday: "long",
   year: "numeric",
   month: "long",
-  day: "numeric"
+  day: "numeric",
 }
 ---
 
@@ -30,13 +33,13 @@ const dateOptions: Intl.DateTimeFormatOptions = {
   image={post.data.heroImage.url.src}
 >
   <BlogStructuredData {...post} slot="structured-data" />
-  <article class="default-spacing">
-    <h1 class="text-center pt-6">{post.data.title}</h1>
-    <div
-      class="bg-zinc-900/30 flex flex-row items-baseline gap-2 px-4 my-4 rounded-md border border-zinc-700"
-    >
+  <h1 class="text-center pt-6">{post.data.title}</h1>
+  <div
+    class="bg-zinc-900/30 flex flex-col sm:flex-row items-baseline gap-2 p-4 my-4 rounded-md border border-zinc-700"
+  >
+    <div class="flex flex-row items-center">
       <span>📆</span>
-      <p class="font-mono !m-2">
+      <p class="font-mono !ml-2">
         {
           post.data.updated
             ? post.data.updated.toLocaleString("en-GB", dateOptions)
@@ -44,6 +47,12 @@ const dateOptions: Intl.DateTimeFormatOptions = {
         }
       </p>
     </div>
+    <span class="hidden sm:block">&#x2022;</span>
+    <div class="flex flex-row items-center">
+      <p class="font-mono">{readingTime} minute read</p>
+    </div>
+  </div>
+  <article class="default-spacing">
     <Content />
   </article>
 </MainLayout>

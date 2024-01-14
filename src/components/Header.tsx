@@ -27,10 +27,10 @@ export default function Header() {
             menuOpen ? "flex" : "hidden"
           } xs:flex flex-col xs:flex-row gap-4`}
         >
-          <a href="/blog" className="menu-link">
+          <a href="/blog/" className="menu-link">
             Blog
           </a>
-          <a href="/projects" className="menu-link">
+          <a href="/projects/" className="menu-link">
             Projects
           </a>
           <a

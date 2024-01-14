@@ -4,11 +4,23 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-3xl font-semibold;
   }
 
   h2 {
-    @apply text-xl;
+    @apply text-2xl font-medium mt-6 mb-3 scroll-mt-[70px];
+  }
+
+  h3 {
+    @apply text-xl font-medium mt-6 mb-2 scroll-mt-[70px];
+  }
+
+  h4 {
+    @apply font-medium text-lg mt-4 mb-2;
+  }
+
+  h5 {
+    @apply font-medium my-2;
   }
 
   a {
@@ -21,7 +33,20 @@
   }
 
   ul {
-    @apply list-disc list-inside;
+    @apply list-outside list-disc my-2 pl-8;
+  }
+
+  ol {
+    @apply list-outside list-decimal my-2 pl-8;
+  }
+
+  ul ul,
+  ol ol {
+    @apply pl-4;
+  }
+
+  li {
+    @apply my-1;
   }
 
   img {
@@ -29,11 +54,7 @@
   }
 
   .default-spacing p {
-    @apply my-6 leading-7;
-  }
-
-  .default-spacing h2 {
-    @apply my-4 leading-7;
+    @apply my-3 leading-7;
   }
 }
 
@@ -47,25 +68,23 @@
     @apply underline underline-offset-4 decoration-zinc-400 decoration-2 transition-all duration-300;
   }
 
-  .handwave {
-    animation: wave 2s infinite;
-  }
-
-  @keyframes wave {
-    0% {
-      rotate: -10deg;
-    }
-
-    50% {
-      rotate: 10deg;
-    }
-
-    100% {
-      rotate: -10deg;
-    }
-  }
-
   .stack-list {
     @apply flex flex-row flex-wrap gap-2 my-2 pb-4;
+  }
+
+  .table {
+    @apply border border-zinc-700;
+  }
+
+  .table th {
+    @apply bg-zinc-900/30 border-r border-zinc-700;
+  }
+
+  .table tr {
+    @apply table-row leading-[28px] border-b border-zinc-700;
+  }
+
+  .table td {
+    @apply relative text-center border-r border-zinc-300;
   }
 }

@@ -1,11 +1,13 @@
 ---
 import { getCollection } from "astro:content"
 
-import MainLayout from "@layouts/MainLayout.astro"
 import List from "@components/List.astro"
+import MainLayout from "@layouts/MainLayout.astro"
 
 const projects = (await getCollection("projects")).sort(
-  (a, b) => b.data.created!.valueOf() - a.data.created!.valueOf()
+  (a, b) =>
+    (b.data.created === "Ongoing" ? Infinity : b.data.created.valueOf()) -
+    (a.data.created === "Ongoing" ? Infinity : a.data.created.valueOf()),
 )
 ---
 

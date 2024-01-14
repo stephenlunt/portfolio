@@ -4,26 +4,26 @@
       <div id="inner-screen">
         <div id="dummy-code" class="select-none">
           <div>
-            <p class="codeline" style={{ animationDelay: "2s" }}>
+            <p class="codeline" style={{ animationDelay: "1s" }}>
               public class HelloWorld &#123;
             </p>
-            <p class="codeline pl-2" style={{ animationDelay: "4s" }}>
+            <p class="codeline pl-2" style={{ animationDelay: "3s" }}>
               public static void main(String[] args) &#123;
             </p>
-            <p class="codeline pl-4" style={{ animationDelay: "6s" }}>
+            <p class="codeline pl-4" style={{ animationDelay: "5s" }}>
               String hello = &quot;Hello! Thank you for visiting my personal
               website today.&quot;;
             </p>
-            <p class="codeline pl-4" style={{ animationDelay: "8s" }}>
+            <p class="codeline pl-4" style={{ animationDelay: "7s" }}>
               String enjoy = &quot;I hope you enjoy your time here!&quot;;
             </p>
-            <p class="codeline pl-4" style={{ animationDelay: "10s" }}>
+            <p class="codeline pl-4" style={{ animationDelay: "9s" }}>
               System.out.println(hello + enjoy);
             </p>
-            <p class="codeline pl-2" style={{ animationDelay: "11s" }}>
+            <p class="codeline pl-2" style={{ animationDelay: "10s" }}>
               &#125;
             </p>
-            <p class="codeline" style={{ animationDelay: "12s" }}>&#125;</p>
+            <p class="codeline" style={{ animationDelay: "11s" }}>&#125;</p>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
 
 <script is:inline>
   document.addEventListener(
-    "astro:page-load",
+    "DOMContentLoaded",
     () => {
       let isLightOn = true
       const lightSwitch = document.getElementById("switch")
@@ -74,7 +74,7 @@
         }
       })
     },
-    { once: true }
+    { once: true },
   )
 </script>
 

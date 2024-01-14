@@ -9,9 +9,9 @@ const blog = defineCollection({
       updated: z.coerce.date().optional(),
       heroImage: z.object({
         url: image(),
-        alt: z.string()
-      })
-    })
+        alt: z.string(),
+      }),
+    }),
 })
 
 const projects = defineCollection({
@@ -19,13 +19,13 @@ const projects = defineCollection({
     z.object({
       title: z.string().max(60),
       description: z.string().min(90).max(155),
-      created: z.coerce.date(),
+      created: z.coerce.date().or(z.literal("Ongoing")),
       featured: z.boolean().default(false),
       heroImage: z.object({
         url: image(),
-        alt: z.string()
-      })
-    })
+        alt: z.string(),
+      }),
+    }),
 })
 
 export const collections = { blog: blog, projects: projects }

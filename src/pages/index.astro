@@ -8,7 +8,11 @@ import MainLayout from "@layouts/MainLayout.astro"
 
 const featuredProjects = (await getCollection("projects"))
   .filter((p) => p.data.featured === true)
-  .sort((a, b) => b.data.created!.valueOf() - a.data.created!.valueOf())
+  .sort(
+    (a, b) =>
+      (b.data.created === "Ongoing" ? Infinity : b.data.created.valueOf()) -
+      (a.data.created === "Ongoing" ? Infinity : a.data.created.valueOf()),
+  )
 ---
 
 <MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
@@ -28,7 +32,7 @@ const featuredProjects = (await getCollection("projects"))
   </div>
 
   <section class="my-16">
-    <h1 class="text-center pb-6">Featured Projects</h1>
+    <h1 class="text-center pb-4">Featured Projects</h1>
     <ul class="flex flex-col gap-4">
       {
         featuredProjects.map((project) => (
@@ -43,7 +47,7 @@ const featuredProjects = (await getCollection("projects"))
               />
             </div>
             <div class="flex flex-col gap-2 py-1">
-              <h2>
+              <h2 class="my-0">
                 <a href={`/projects/${project.slug}/`}>{project.data.title}</a>
               </h2>
               <p>{project.data.description}</p>

@@ -15,6 +15,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
+      "@utils": ["src/utils/index.ts"],
       "@consts": ["src/consts.ts"]
     }
   }
