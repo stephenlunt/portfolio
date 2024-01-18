@@ -9,12 +9,13 @@ interface Props {
 const { listItems, slugPrefix } = Astro.props
 ---
 
-<ul class="!list-none">
+<!-- TODO: fix padding left -->
+<ul class="list-none m-0 p-0">
   {
     listItems.map((item) => (
       <li class="pb-4">
         <div class="flex flex-col xs:flex-row justify-between items-baseline pb-2">
-          <h2>
+          <h2 class="mb-1">
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
           {item.data.created === "Ongoing" ? (

@@ -46,15 +46,19 @@
   }
 
   li {
-    @apply my-1;
+    @apply my-2;
   }
 
-  img {
-    @apply inline-block;
+  code {
+    @apply text-violet-400 font-light break-words;
   }
 
   .default-spacing p {
     @apply my-3 leading-7;
+  }
+
+  .default-spacing a {
+    @apply break-all;
   }
 }
 
@@ -69,7 +73,15 @@
   }
 
   .stack-list {
-    @apply flex flex-row flex-wrap gap-2 my-2 pb-4;
+    @apply flex flex-row flex-wrap gap-2 my-2 pb-4 px-0;
+  }
+
+  .vertical-img {
+    @apply max-w-full sm:max-w-[50%] md:max-w-[30%] flex mx-auto;
+  }
+
+  .vertical-img-group {
+    @apply flex flex-col sm:flex-row sm:gap-4;
   }
 
   .table {
@@ -85,6 +97,6 @@
   }
 
   .table td {
-    @apply relative text-center border-r border-zinc-300;
+    @apply relative text-center border-r border-zinc-700 px-2;
   }
 }
