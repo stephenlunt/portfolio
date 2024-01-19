@@ -24,7 +24,7 @@
   }
 
   a {
-    @apply underline underline-offset-4 decoration-zinc-700 decoration-2;
+    @apply underline underline-offset-4 decoration-zinc-700 decoration-2 break-words;
   }
 
   a:hover,
@@ -54,11 +54,7 @@
   }
 
   .default-spacing p {
-    @apply my-3 leading-7;
-  }
-
-  .default-spacing a {
-    @apply break-all;
+    @apply my-4 leading-7;
   }
 }
 

@@ -7,6 +7,7 @@ const blog = defineCollection({
       description: z.string().min(90).max(155),
       created: z.coerce.date(),
       updated: z.coerce.date().optional(),
+      featured: z.boolean().default(false),
       heroImage: z.object({
         url: image(),
         alt: z.string(),

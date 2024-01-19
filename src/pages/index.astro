@@ -13,6 +13,10 @@ const featuredProjects = (await getCollection("projects"))
       (b.data.created === "Ongoing" ? Infinity : b.data.created.valueOf()) -
       (a.data.created === "Ongoing" ? Infinity : a.data.created.valueOf()),
   )
+
+const featuredBlogPost = (await getCollection("blog"))
+  .filter((post) => post.data.featured === true)
+  .sort((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
 ---
 
 <MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
@@ -51,6 +55,33 @@ const featuredProjects = (await getCollection("projects"))
                 <a href={`/projects/${project.slug}/`}>{project.data.title}</a>
               </h2>
               <p>{project.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="my-16">
+    <h1 class="text-center pb-4">Featured Blog Posts</h1>
+    <ul class="flex flex-col gap-4 m-0 p-0">
+      {
+        featuredBlogPost.map((post) => (
+          <li class="flex flex-col xs:flex-row gap-4">
+            <div class="max-w-full xs:max-w-[240px] flex-shrink-0">
+              <Image
+                src={post.data.heroImage.url}
+                alt={post.data.heroImage.alt}
+                width={480}
+                height={320}
+                class="rounded-md"
+              />
+            </div>
+            <div class="flex flex-col gap-2 py-1">
+              <h2 class="my-0">
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
             </div>
           </li>
         ))
