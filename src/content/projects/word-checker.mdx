@@ -11,13 +11,13 @@ heroImage:
 
 import gamepageImage from "@assets/imgs/projects/scrabble-checker-gamepage.jpeg"
 import homepageImage from "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
-import ExternalLink from "@components/ExternalLink"
-import RoundedImage from "@components/RoundedImage.astro"
-import { ProjectStackList, StackList } from "@components/StackIcon"
+import ExternalLink from "@components/navigation/ExternalLink"
+import RoundedImage from "@components/images/RoundedImage.astro"
+import { ProjectStackList, StackList } from "@components/ux/StackIcon"
 
 Word Checker (<ExternalLink href="https://wordchecker.io" text="wordchecker.io" />) is an online word-finding website I built for Scrabble players. It's a collection of word tools such as dictionary checkers and word finders, coupled with a personal blog about word games.
 
-The app is primarily built using the Astro framework hosted on Cloudflare pages. Some server-side rendering is used, but most pages are statically rendered for performance. Additionally, React was used alongside Astro to add interactivity to some components.
+The app is primarily built using the <ExternalLink href="https://astro.build/" text="Astro" /> framework hosted on Cloudflare pages. Some server-side rendering is used, but most pages are statically rendered for performance. Additionally, React was used alongside Astro to add interactivity to some components.
 
 The app's backend is a dockerised Go application connected to a Postgres database and Redis cache. This serves as a REST API for the dictionary of words used in Scrabble and a service for word tools such as word finders and anagram solvers.
 
