@@ -3,38 +3,36 @@ title: "Word Checker"
 description: "Word Checker is a collection of word game tools, word lists, and blog which is primarily aimed at Scrabble players."
 created: "Ongoing"
 featured: true
+tags: ["astro", "typescript", "tailwindcss", "go", "docker", "postgres", "redis", "cloudflare"]
 heroImage:
   url: "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
   alt: "Homepage of Word Checker project"
 ---
 
-import { StackList, ProjectStackList } from "@components/StackIcon"
+import gamepageImage from "@assets/imgs/projects/scrabble-checker-gamepage.jpeg"
+import homepageImage from "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
 import ExternalLink from "@components/ExternalLink"
 import RoundedImage from "@components/RoundedImage.astro"
-import homepageImage from "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
-import gamepageImage from "@assets/imgs/projects/scrabble-checker-gamepage.jpeg"
+import { ProjectStackList, StackList } from "@components/StackIcon"
 
-Word Checker (<ExternalLink href="https://wordchecker.io" text="wordchecker.io" />) is
-an online word-finding tool I built for Scrabble players to learn more about Scrabble and
-words from the dictionary.
+Word Checker (<ExternalLink href="https://wordchecker.io" text="wordchecker.io" />) is an online word-finding website I built for Scrabble players. It's a collection of word tools such as dictionary checkers and word finders, coupled with a personal blog about word games.
 
-It primarily runs the Django framework on the backend which handles most of the application
-logic server side. Vanilla JavaScript is used on the frontend to add interactivity for users.
-Finally, Docker is used to containerise the Django application, including the Postgres
-database, nginx proxy, and Redis cache, which makes for easy deployment.
+The app is primarily built using the Astro framework hosted on Cloudflare pages. Some server-side rendering is used, but most pages are statically rendered for performance. Additionally, React was used alongside Astro to add interactivity to some components.
+
+The app's backend is a dockerised Go application connected to a Postgres database and Redis cache. This serves as a REST API for the dictionary of words used in Scrabble and a service for word tools such as word finders and anagram solvers.
 
 ## Tech Stack
 
 <StackList
   stack={[
-    ProjectStackList.Python,
-    ProjectStackList.Django,
+    ProjectStackList.Astro,
+    ProjectStackList.React,
+    ProjectStackList.TypeScript,
+    ProjectStackList.TailwindCSS,
+    ProjectStackList.Go,
     ProjectStackList.Docker,
     ProjectStackList.Postgres,
-    ProjectStackList.JavaScript,
     ProjectStackList.Redis,
-    ProjectStackList.Html,
-    ProjectStackList.TailwindCSS,
     ProjectStackList.Cloudflare,
   ]}
 />

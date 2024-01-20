@@ -9,7 +9,6 @@ interface Props {
 const { listItems, slugPrefix } = Astro.props
 ---
 
-<!-- TODO: fix padding left -->
 <ul class="list-none m-0 p-0">
   {
     listItems.map((item) => (
@@ -18,16 +17,26 @@ const { listItems, slugPrefix } = Astro.props
           <h2 class="mb-1">
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
-          {item.data.created === "Ongoing" ? (
-            <div class="font-mono">Ongoing</div>
-          ) : (
-            <div class="font-mono">
-              {item.data.created.toLocaleString("default", { month: "short" }) +
-                ", " +
-                item.data.created.getFullYear()}
-            </div>
-          )}
+          <div class="font-mono">
+            {item.data.created === "Ongoing"
+              ? "Ongoing"
+              : item.data.created.toLocaleString("default", {
+                  month: "short",
+                  year: "numeric",
+                })}
+          </div>
         </div>
+
+        {item.data.tags && (
+          <div class="flex flex-row flex-wrap gap-1">
+            {item.data.tags.map((tag) => (
+              <div class="bg-zinc-900/30 border border-zinc-700 rounded-2xl px-3 py-1 mb-2 text-sm">
+                {tag}
+              </div>
+            ))}
+          </div>
+        )}
+
         <p>{item.data.description}</p>
       </li>
     ))

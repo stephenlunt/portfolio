@@ -7,6 +7,7 @@ import {
   SiDjango,
   SiDocker,
   SiFlask,
+  SiGo,
   SiHtml5,
   SiJavascript,
   SiJquery,
@@ -42,6 +43,7 @@ export enum ProjectStackList {
   Redis = "Redis",
   Astro = "Astro",
   Markdown = "Markdown",
+  Go = "Go",
 }
 
 type StackListProps = { stack: ProjectStackList[] }
@@ -106,6 +108,8 @@ function IconSwitcher({ tech }: StackIconProps): React.ReactNode {
       return <SiAstro />
     case ProjectStackList.Markdown:
       return <SiMarkdown />
+    case ProjectStackList.Go:
+      return <SiGo />
     default:
       return <FaCode />
   }

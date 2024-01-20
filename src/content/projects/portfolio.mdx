@@ -3,16 +3,17 @@ title: "Portfolio"
 description: "My portfolio website (the site you're on now) was built using the Astro framework. It is a place for me to showcase my personal projects and work."
 created: "08 September 2023"
 featured: true
+tags: ["astro", "typescript", "tailwindcss", "markdown"]
 heroImage:
   url: "@assets/imgs/projects/personal-site-art.jpeg"
   alt: "Homepage of Scrabble Checker project"
 ---
 
-import { StackList, ProjectStackList } from "@components/StackIcon"
+import portfolioArtDark from "@assets/imgs/projects/personal-site-art-dark.jpeg"
+import portfolioArtLight from "@assets/imgs/projects/personal-site-art.jpeg"
 import ExternalLink from "@components/ExternalLink"
 import RoundedImage from "@components/RoundedImage.astro"
-import portfolioArtLight from "@assets/imgs/projects/personal-site-art.jpeg"
-import portfolioArtDark from "@assets/imgs/projects/personal-site-art-dark.jpeg"
+import { ProjectStackList, StackList } from "@components/StackIcon"
 
 My portfolio (the site you're on now) was built using <ExternalLink href="https://astro.build/" text="Astro" /> and
 is available to view at the <ExternalLink href="https://github.com/stephenlunt/portfolio" text="GitHub repo here" />.
