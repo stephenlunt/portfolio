@@ -13,7 +13,7 @@ const { listItems, slugPrefix } = Astro.props
   {
     listItems.map((item) => (
       <li class="pb-4">
-        <div class="flex flex-col xs:flex-row justify-between items-baseline pb-2">
+        <div class="flex flex-row flex-wrap justify-between items-baseline pb-2">
           <h2 class="mb-1">
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
