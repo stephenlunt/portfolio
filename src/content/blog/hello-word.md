@@ -2,7 +2,6 @@
 title: "Hello, World!"
 description: "Hello, world! Welcome to my blog where I plan to write about topics I enjoy (primarily technology and software engineering)."
 created: "2023-08-30"
-featured: false
 heroImage:
   url: "@public/placeholder-image.jpeg"
   alt: "Software Engineer at a computer"

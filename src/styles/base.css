@@ -49,8 +49,12 @@
     @apply my-2;
   }
 
+  pre {
+    @apply bg-zinc-900/30 border border-zinc-700 rounded-md p-4;
+  }
+
   code {
-    @apply text-violet-400 font-light break-words;
+    @apply text-[#4EC9B0] font-light break-words text-sm;
   }
 
   .default-spacing p {

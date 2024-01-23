@@ -3,16 +3,26 @@ title: "Word Checker"
 description: "Word Checker is a collection of word game tools, word lists, and blog which is primarily aimed at Scrabble players."
 created: "Ongoing"
 featured: true
-tags: ["astro", "typescript", "tailwindcss", "go", "docker", "postgres", "redis", "cloudflare"]
+tags:
+  [
+    "astro",
+    "typescript",
+    "tailwindcss",
+    "go",
+    "docker",
+    "postgres",
+    "redis",
+    "cloudflare",
+  ]
 heroImage:
-  url: "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
+  url: "@assets/imgs/projects/word-checker-homepage.jpeg"
   alt: "Homepage of Word Checker project"
 ---
 
-import gamepageImage from "@assets/imgs/projects/scrabble-checker-gamepage.jpeg"
-import homepageImage from "@assets/imgs/projects/scrabble-checker-homepage.jpeg"
-import ExternalLink from "@components/navigation/ExternalLink"
+import blogImage from "@assets/imgs/projects/word-checker-blog.jpeg"
+import homepageImage from "@assets/imgs/projects/word-checker-homepage.jpeg"
 import RoundedImage from "@components/images/RoundedImage.astro"
+import ExternalLink from "@components/navigation/ExternalLink"
 import { ProjectStackList, StackList } from "@components/ux/StackIcon"
 
 Word Checker (<ExternalLink href="https://wordchecker.io" text="wordchecker.io" />) is an online word-finding website I built for Scrabble players. It's a collection of word tools such as dictionary checkers and word finders, coupled with a personal blog about word games.
@@ -39,5 +49,5 @@ The app's backend is a dockerised Go application connected to a Postgres databas
 
 ## Showcase
 
-<RoundedImage src={homepageImage} alt="Scrabble Checkers Homepage" />
-<RoundedImage src={gamepageImage} alt="Scrabble Checkers Gamepage" />
+<RoundedImage src={homepageImage} alt="Word Checkers Homepage" />
+<RoundedImage src={blogImage} alt="Word Checkers Blog page" />

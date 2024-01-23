@@ -3,7 +3,6 @@ title: "Scenic Rides - MSc Dissertation Project"
 description: "The write-up and code of my master dissertation project, Scenic Rides, a mobile guidebook application for a scenic bus route in the North East of England."
 created: "2024-01-19 22:00"
 updated: "2024-01-19 22:00"
-featured: true
 heroImage:
   url: "@assets/imgs/blog/scenic-rides-thumbnail.jpeg"
   alt: "Scenic Rides mobile application thumbnail"

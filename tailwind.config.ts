@@ -14,6 +14,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        mono: ["Fira Mono", ...defaultTheme.fontFamily.mono],
       },
     },
     screens: {

@@ -2,8 +2,8 @@
 import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
-import PageHero from "@components/ux/PageHero.astro"
 import SiteStructuredData from "@components/head/SiteStructuredData.astro"
+import PageHero from "@components/ux/PageHero.astro"
 import MainLayout from "@layouts/MainLayout.astro"
 
 const featuredProjects = (await getCollection("projects"))
@@ -14,9 +14,9 @@ const featuredProjects = (await getCollection("projects"))
       (a.data.created === "Ongoing" ? Infinity : a.data.created.valueOf()),
   )
 
-const featuredBlogPost = (await getCollection("blog"))
-  .filter((post) => post.data.featured === true)
-  .sort((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
+const recentPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.created.valueOf() - a.data.created.valueOf(),
+)
 ---
 
 <MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
@@ -63,10 +63,10 @@ const featuredBlogPost = (await getCollection("blog"))
   </section>
 
   <section class="my-16">
-    <h1 class="text-center pb-4">Featured Blog Posts</h1>
+    <h1 class="text-center pb-4">Recent Blog Posts</h1>
     <ul class="flex flex-col gap-4 m-0 p-0">
       {
-        featuredBlogPost.map((post) => (
+        recentPosts.map((post) => (
           <li class="flex flex-col xs:flex-row gap-4">
             <div class="max-w-full xs:max-w-[240px] flex-shrink-0">
               <Image
