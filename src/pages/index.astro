@@ -19,7 +19,10 @@ const recentPosts = (await getCollection("blog")).sort(
 )
 ---
 
-<MainLayout title="Home" description="Stephen Lunt's portfolio and blog">
+<MainLayout
+  title="Stephen Lunt's Portfolio and Blog"
+  description="Hi, I'm Stephen, a full stack software engineer currently working in London. Explore some of more work, projects, and writing here on my personal website."
+>
   <SiteStructuredData slot="structured-data" />
   <PageHero slot="page-hero" />
   <div

@@ -36,7 +36,7 @@ const dateOptions: Intl.DateTimeFormatOptions = {
   <BlogStructuredData {...post} slot="structured-data" />
   <h1 class="text-center pt-6">{post.data.title}</h1>
   <div
-    class="bg-zinc-900/30 flex flex-col sm:flex-row items-baseline gap-2 p-4 my-4 rounded-md border border-zinc-700"
+    class="bg-zinc-900/30 flex flex-col sm:flex-row items-baseline gap-4 p-4 my-4 rounded-md border border-zinc-700"
   >
     <div class="flex flex-row items-center">
       <span>📆</span>
@@ -48,9 +48,9 @@ const dateOptions: Intl.DateTimeFormatOptions = {
         }
       </p>
     </div>
-    <span class="hidden sm:block">&#x2022;</span>
     <div class="flex flex-row items-center">
-      <p class="font-mono">{readingTime} minute read</p>
+      <span>⏳</span>
+      <p class="font-mono !ml-2">{readingTime} minute read</p>
     </div>
   </div>
   <article class="default-spacing">
