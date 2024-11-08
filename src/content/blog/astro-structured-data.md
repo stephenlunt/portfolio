@@ -54,7 +54,7 @@ interface Props {
 const { title, description } = Astro.props as Props
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />

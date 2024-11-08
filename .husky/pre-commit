@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "🎨 Checking formatting..."
+pnpm run format:check
+
+echo "💡 TypeScript checking..."
+pnpm run ts-check
+
+echo "🏗️ Building..."
+pnpm run build
