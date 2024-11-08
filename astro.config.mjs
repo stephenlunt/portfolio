@@ -21,9 +21,6 @@ export default defineConfig({
       noExternal: ["react-icons"],
     },
   },
-  redirects: {
-    "/projects/scrabble-checker/": "/projects/word-checker/",
-  },
   markdown: {
     shikiConfig: {
       theme: "dark-plus",
