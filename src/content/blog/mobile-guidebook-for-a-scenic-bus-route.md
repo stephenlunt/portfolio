@@ -157,7 +157,7 @@ To conduct a fair and consistent evaluation of each application, a framework est
 
 #### _Figure 2: Application assessment criteria, adapted from Olsina et al. (2008, p. 408)._
 
-<div class="bg-zinc-900/30 border border-zinc-700">
+<div class="bg-zinc-200/30 border border-zinc-300">
 
 1. **Usability**
    1. Understandability – such as appropriate labelling and ease to recognise labels/icons.
@@ -515,9 +515,9 @@ The functional and non-functional requirements describe what and how the applica
 - **FR11** - Text, images, maps, and other media or resources will be credited and linked to in the application so users can read more from the source (High).
 - **FR12** - Each bus stop will have a brief description detailing what is available nearby to the stop (Medium).
 - **FR13** - The application should function as expected for users not on the bus physically, i.e., if a user uses the app at a bus stop on the route, nearby attractions will show as expected (Medium).
-- **FR14** The application will use mapping technologies to display a visual map to the user (Medium).
-- **FR15** The application will alert users of upcoming attractions through push notifications (Low).
-- **FR16** Users can add attractions along the route to a favourites list (Low).
+- **FR14** - The application will use mapping technologies to display a visual map to the user (Medium).
+- **FR15** - The application will alert users of upcoming attractions through push notifications (Low).
+- **FR16** - Users can add attractions along the route to a favourites list (Low).
 
 #### _Table 3: Non-functional requirements._
 
@@ -1090,7 +1090,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 #### _Table 5: Tasks completed as part of system testing._
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** The user opens the application.
 - **Expected Outcome:** The home screen shows a list of routes set up for the application.
@@ -1098,7 +1098,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** The user clicks to view a bus route.
 - **Expected Outcome:** The application will load route data and display the user a screen with these details.
@@ -1106,7 +1106,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** The user clicks to view the route guidebook.
 - **Expected Outcome:** The application should load data on the route (e.g., its stops, points, and attractions) and ask for geolocation permission.
@@ -1114,7 +1114,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** A user grants geolocation permission on the guidebook screen.
 - **Expected Outcome:** The application should use the device’s location to work out the user’s progress along the route and display it in the `ProgressBar` component.
@@ -1122,7 +1122,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** A user denies geolocation permission on the guidebook screen.
 - **Expected Outcome:** The application should show a list of bus stops and attractions, but not the `ProgressBar` component.
@@ -1130,7 +1130,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** A user clicks to view an attraction screen.
 - **Expected Outcome:** The application should load data on the attraction and display it to the user.
@@ -1138,7 +1138,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** A user clicks to view the about screen.
 - **Expected Outcome:** The application displays the about screen.
@@ -1146,7 +1146,7 @@ Specific tasks were defined which would help evaluate if the application functio
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Task:** A user clicks to view the help screen.
 - **Expected Outcome:** The application displays the help screen.
@@ -1194,112 +1194,112 @@ _Tables 6 & 7_ detail the finished application's compliance with the initial fun
 
 #### _Table 6: Functional requirements compliance._
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR1 - High Priority - PASS**
 - **Comments:** The home screen shows all available routes and links to the about and help screens.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR2 - High Priority - PASS**
 - **Comments:** Each route in the data file has a screen which is dynamically rendered for it containing details of the route and a link to its guidebook.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR3 - High Priority - PASS**
 - **Comments:** Each route will have a guidebook screen dynamically rendered.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR4 - High Priority - PASS**
 - **Comments:** The guidebook screen will show all stops and attractions for each route entered in the data files in a sequenced order.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR5 - High Priority - PASS**
 - **Comments:** The guidebook screen utilises geolocation features to show nearby stops and attractions to the user’s position.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR6 - High Priority - PASS**
 - **Comments:** The application requests permission from the user before using geolocation features.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR7 - High Priority - PASS**
 - **Comments:** The guidebook screen allows the user to switch the direction of travel and will function regardless of if geolocation permission is granted or denied.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR8 - High Priority - PASS**
 - **Comments:** Each attraction on the guidebook screen has a picture and name as set up in the data file for attractions.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR9 - High Priority - PASS**
 - **Comments:** Each attraction featured in the guidebook can be clicked on to navigate to its attraction screen.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR10 - High Priority - PARTIAL PASS**
 - **Comments:** Each attraction screen does contain an image and details about the attraction. However, this is marked as only partial as initial designs included a photo gallery (implying images rather than a singular image) which was not implemented due to the decision made to bundle static assets in the application binary.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR11 - High Priority - PASS**
 - **Comments:** Each piece of text, image, map, or other media was accredited back to its source using a link within the application.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR12 - Medium Priority - PASS**
 - **Comments:** Each bus stops on the route without an attraction includes details on the nearby area and facilities available at the stop.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR13 - Medium Priority - PASS**
 - **Comments:** The application functions if the user is not on the bus (i.e., standing at a stop). This was tested in the user evaluation of section 4.3.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR14 - Medium Priority - PARTIAL PASS**
 - **Comments:** The application does implement a static map on attraction screens; however, this is only marked as partial as the outcome of this implementation was lacking as will be covered in the following sections of the evaluation.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR15 - Low Priority - FAIL**
 - **Comments:** Push notification to alert users to nearby attractions was not implemented in the time available.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **FR16 - Low Priority - FAIL**
 - **Comments:** A favourites list of attractions was not implemented in the time available.
@@ -1308,49 +1308,49 @@ _Tables 6 & 7_ detail the finished application's compliance with the initial fun
 
 #### _Table 7: Non-functional requirements compliance._
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR1 - High Priority - PASS**
 - **Comments:** React Native was used for the development of this application and it compiles to iOS and Android platforms successfully.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR2 - High Priority - PASS**
 - **Comments:** Through using dynamic routing, reusable screen components, and separating the data from screens the app supports adding additional routes in the future without significant reengineering.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR3 - High Priority - PASS**
 - **Comments:** The geolocation accuracy is set to high which works to within 10 meters, hence it locates users to the nearest stop or attraction.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR4 - High Priority - PASS**
 - **Comments:** The application can run without any reliance on a network connection.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR5 - High Priority - PASS**
 - **Comments:** A dataset of coordinate points was collected and used for the AD122 route to support functionality in this application.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR6 - Medium Priority - PASS**
 - **Comments:** The guidebook screen in testing calculated the user location along the route in sub-2-second timing.
 
 </div>
 
-<div class="flex flex-col bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="flex flex-col bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **NFR7 - Medium Priority - PASS**
 - **Comments:** Error screens and buttons linking to the homepage were created to provide concise error messaging and recovery for users.
@@ -1374,7 +1374,7 @@ _Table 8_ details the topic of each question, followed by a discussion to ration
 
 #### _Table 8: Summary of results from the user evaluation._
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q1. Initial thoughts and first-time use**
 
@@ -1382,7 +1382,7 @@ Initial thoughts on the application were positive. Participant 1 focused on the 
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q2. Navigation and ease of use**
 
@@ -1390,7 +1390,7 @@ Participants found navigation straightforward as there are not many click points
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q3. Good features of the application**
 
@@ -1398,7 +1398,7 @@ Participant 1 commented on the app being highly visual through its use of images
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q4. Missing features**
 
@@ -1406,7 +1406,7 @@ Both participants commented on the implementation of the mapping solution being 
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q5. Application design**
 
@@ -1414,7 +1414,7 @@ The application design was well received, with strong points being the use of im
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q6. Errors, bugs, crashes, and other problems**
 
@@ -1422,7 +1422,7 @@ Participant 1 noted a bug on the attraction screen as it was _“never-ending”
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q7. Journey enhancements**
 
@@ -1430,7 +1430,7 @@ The main enhancement to users’ journey on the bus was that it could be used to
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q8. When and how the application was used**
 
@@ -1438,7 +1438,7 @@ Participant 1 liked the idea of using the application before going on the journe
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q9. Use the application again.**
 
@@ -1446,7 +1446,7 @@ Participant 1 was happy to use the application again noting it was _“user-frie
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2 px-4">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2 px-4">
 
 **Q10. Would you recommend it?**
 
@@ -1522,7 +1522,7 @@ _Table 9_ contains a discussion of how well the finished project met each initia
 
 #### _Table 9: Discussion of project objectives._
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Objective:** 1
 - **Achieved:** Yes
@@ -1530,7 +1530,7 @@ _Table 9_ contains a discussion of how well the finished project met each initia
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Objective:** 2
 - **Achieved:** Yes
@@ -1538,7 +1538,7 @@ _Table 9_ contains a discussion of how well the finished project met each initia
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Objective:** 3
 - **Achieved:** Yes
@@ -1546,7 +1546,7 @@ _Table 9_ contains a discussion of how well the finished project met each initia
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Objective:** 4
 - **Achieved:** Yes
@@ -1554,7 +1554,7 @@ _Table 9_ contains a discussion of how well the finished project met each initia
 
 </div>
 
-<div class="bg-zinc-900/30 border border-zinc-700 mb-2">
+<div class="bg-zinc-200/30 border border-zinc-300 mb-2">
 
 - **Objective:** 5
 - **Achieved:** Yes

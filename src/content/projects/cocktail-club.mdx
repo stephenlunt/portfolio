@@ -11,8 +11,8 @@ heroImage:
 import ccDrinkpage from "@assets/imgs/projects/cocktail-club-drinkpage.jpeg"
 import ccHomepage from "@assets/imgs/projects/cocktail-club-homepage.jpeg"
 import ccLeaderboard from "@assets/imgs/projects/cocktail-club-leaderboard.jpeg"
+import ProjectImage from "@components/images/ProjectImage.astro"
 import ExternalLink from "@components/navigation/ExternalLink"
-import RoundedImage from "@components/images/RoundedImage.astro"
 import { ProjectStackList, StackList } from "@components/ux/StackIcon"
 
 The Cocktail Club is a Flask web application I created to form my final project
@@ -42,9 +42,9 @@ I could then focus on building a user interface to display data fetched from the
 
 ## Showcase
 
-<RoundedImage src={ccHomepage} alt="The Cocktail Clubs Home page" />
-<RoundedImage src={ccDrinkpage} alt="The Cocktail Clubs Drinks page" />
-<RoundedImage
+<ProjectImage src={ccHomepage} alt="The Cocktail Clubs Home page" />
+<ProjectImage src={ccDrinkpage} alt="The Cocktail Clubs Drinks page" />
+<ProjectImage
   src={ccLeaderboard}
   alt="The Cocktail Clubs Drinks Leaderboard page"
 />

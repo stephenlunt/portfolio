@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
 import SiteStructuredData from "@components/head/SiteStructuredData.astro"
+import List from "@components/ux/List.astro"
 import PageHero from "@components/ux/PageHero.astro"
 import MainLayout from "@layouts/MainLayout.astro"
 
@@ -21,74 +21,22 @@ const recentPosts = (await getCollection("blog")).sort(
 
 <MainLayout
   title="Stephen Lunt's Portfolio and Blog"
-  description="Hi, I'm Stephen, a full stack software engineer currently working in London. Explore some of more work, projects, and writing here on my personal website."
+  description="Hey, I'm Stephen. I'm a Full Stack Software Engineer located in London. Welcome to my portfolio and blog!"
 >
   <SiteStructuredData slot="structured-data" />
   <PageHero slot="page-hero" />
-  <div
-    class="bg-zinc-900/30 flex flex-col sm:flex-row items-center gap-4 mx-auto p-6 rounded-md border border-zinc-700"
-  >
-    <img
-      src="/avatar.jpeg"
-      alt="avatar"
-      class="rounded-full w-32 h-32 border border-zinc-700"
-    />
-    <p class="inline-block my-auto text-center sm:text-left">
-      Hey, I'm Stephen 👋 I'm a Full Stack Software Engineer working in London.
-    </p>
+  <div class="mx-auto px-6 text-center text-xl">
+    Hey, I'm Stephen 👋 I'm a Full Stack Software Engineer located in London.
+    Welcome to my portfolio and blog!
   </div>
 
   <section class="my-16">
-    <h1 class="text-center pb-4">Featured Projects</h1>
-    <ul class="flex flex-col gap-4 m-0 p-0">
-      {
-        featuredProjects.map((project) => (
-          <li class="flex flex-col xs:flex-row gap-4">
-            <div class="max-w-full xs:max-w-[240px] flex-shrink-0">
-              <Image
-                src={project.data.heroImage.url}
-                alt={project.data.heroImage.alt}
-                width={480}
-                height={320}
-                class="rounded-md"
-              />
-            </div>
-            <div class="flex flex-col gap-2 py-1">
-              <h2 class="my-0">
-                <a href={`/projects/${project.slug}/`}>{project.data.title}</a>
-              </h2>
-              <p>{project.data.description}</p>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <h2 class="text-center text-3xl">Featured Projects</h2>
+    <List listItems={featuredProjects} slugPrefix="projects" />
   </section>
 
   <section class="my-16">
-    <h1 class="text-center pb-4">Recent Blog Posts</h1>
-    <ul class="flex flex-col gap-4 m-0 p-0">
-      {
-        recentPosts.map((post) => (
-          <li class="flex flex-col xs:flex-row gap-4">
-            <div class="max-w-full xs:max-w-[240px] flex-shrink-0">
-              <Image
-                src={post.data.heroImage.url}
-                alt={post.data.heroImage.alt}
-                width={480}
-                height={320}
-                class="rounded-md"
-              />
-            </div>
-            <div class="flex flex-col gap-2 py-1">
-              <h2 class="my-0">
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-              </h2>
-              <p>{post.data.description}</p>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <h2 class="text-center text-3xl">Recent Blog Posts</h2>
+    <List listItems={recentPosts} slugPrefix="blog" />
   </section>
 </MainLayout>

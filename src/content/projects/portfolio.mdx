@@ -11,8 +11,8 @@ heroImage:
 
 import portfolioArtDark from "@assets/imgs/projects/personal-site-art-dark.jpeg"
 import portfolioArtLight from "@assets/imgs/projects/personal-site-art.jpeg"
+import ProjectImage from "@components/images/ProjectImage.astro"
 import ExternalLink from "@components/navigation/ExternalLink"
-import RoundedImage from "@components/images/RoundedImage.astro"
 import { ProjectStackList, StackList } from "@components/ux/StackIcon"
 
 My portfolio (the site you're on now) was built using <ExternalLink href="https://astro.build/" text="Astro" /> and
@@ -39,8 +39,8 @@ for projects in the past.
 
 ## Showcase
 
-<RoundedImage src={portfolioArtLight} alt="Portfolio website hero image" />
-<RoundedImage
+<ProjectImage src={portfolioArtLight} alt="Portfolio website hero image" />
+<ProjectImage
   src={portfolioArtDark}
   alt="Portfolio website hero image in dark mode"
 />

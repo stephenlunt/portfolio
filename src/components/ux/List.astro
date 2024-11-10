@@ -17,7 +17,7 @@ const { listItems, slugPrefix } = Astro.props
           <h2 class="mb-1">
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
-          <div class="font-mono">
+          <div>
             {item.data.created === "Ongoing"
               ? "Ongoing"
               : item.data.created.toLocaleString("default", {
@@ -30,7 +30,7 @@ const { listItems, slugPrefix } = Astro.props
         {item.data.tags && (
           <div class="flex flex-row flex-wrap gap-1">
             {item.data.tags.map((tag) => (
-              <div class="bg-zinc-900/30 border border-zinc-700 rounded-2xl px-3 py-1 mb-2 text-sm">
+              <div class="bg-zinc-200/30 px-2 py-0.5 mb-2 text-sm text-black border border-black">
                 {tag}
               </div>
             ))}

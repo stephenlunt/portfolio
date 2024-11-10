@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-semibold mt-6 mb-3;
   }
 
   h2 {
@@ -29,7 +29,7 @@
 
   a:hover,
   a:focus {
-    @apply decoration-zinc-400 transition-all duration-300;
+    @apply decoration-zinc-500 transition-all duration-300;
   }
 
   ul {
@@ -50,11 +50,11 @@
   }
 
   pre {
-    @apply bg-zinc-900/30 border border-zinc-700 rounded-md p-4;
+    @apply !bg-zinc-200/30 border border-zinc-300 p-4;
   }
 
   code {
-    @apply text-[#4EC9B0] font-light break-words text-sm;
+    @apply text-highlight font-light break-words text-sm;
   }
 
   .default-spacing p {
@@ -69,7 +69,7 @@
 
   .menu-link:hover,
   .menu-link:active {
-    @apply underline underline-offset-4 decoration-zinc-400 decoration-2 transition-all duration-300;
+    @apply underline underline-offset-4 decoration-black decoration-2 transition-all duration-300;
   }
 
   .stack-list {
@@ -85,18 +85,18 @@
   }
 
   .table {
-    @apply border border-zinc-700;
+    @apply border border-zinc-300;
   }
 
   .table th {
-    @apply bg-zinc-900/30 border-r border-zinc-700;
+    @apply bg-zinc-200/30 border-r border-zinc-300;
   }
 
   .table tr {
-    @apply table-row leading-[28px] border-b border-zinc-700;
+    @apply table-row leading-[28px] border-b border-zinc-300;
   }
 
   .table td {
-    @apply relative text-center border-r border-zinc-700 px-2;
+    @apply relative text-center border-r border-zinc-300 px-2;
   }
 }

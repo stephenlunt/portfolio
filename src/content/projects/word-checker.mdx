@@ -11,7 +11,6 @@ tags:
     "go",
     "docker",
     "postgres",
-    "redis",
     "cloudflare",
   ]
 heroImage:
@@ -21,7 +20,7 @@ heroImage:
 
 import blogImage from "@assets/imgs/projects/word-checker-blog.jpeg"
 import homepageImage from "@assets/imgs/projects/word-checker-homepage.jpeg"
-import RoundedImage from "@components/images/RoundedImage.astro"
+import ProjectImage from "@components/images/ProjectImage.astro"
 import ExternalLink from "@components/navigation/ExternalLink"
 import { ProjectStackList, StackList } from "@components/ux/StackIcon"
 
@@ -42,12 +41,11 @@ The app's backend is a dockerised Go application connected to a Postgres databas
     ProjectStackList.Go,
     ProjectStackList.Docker,
     ProjectStackList.Postgres,
-    ProjectStackList.Redis,
     ProjectStackList.Cloudflare,
   ]}
 />
 
 ## Showcase
 
-<RoundedImage src={homepageImage} alt="Word Checkers Homepage" />
-<RoundedImage src={blogImage} alt="Word Checkers Blog page" />
+<ProjectImage src={homepageImage} alt="Word Checkers Homepage" />
+<ProjectImage src={blogImage} alt="Word Checkers Blog page" />

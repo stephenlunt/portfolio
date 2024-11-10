@@ -23,7 +23,7 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      theme: "dark-plus",
+      theme: "github-light",
     },
     rehypePlugins: [
       [

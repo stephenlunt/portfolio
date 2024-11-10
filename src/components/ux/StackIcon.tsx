@@ -61,7 +61,7 @@ export function StackList({ stack }: StackListProps) {
 
 function StackIcon({ tech }: StackIconProps) {
   return (
-    <li className="flex flex-row flex-nowrap items-center gap-2 bg-zinc-900/30 border border-zinc-700 max-w-fit px-2 py-1 my-0 rounded-md cursor-default">
+    <li className="flex flex-row flex-nowrap items-center gap-2 bg-zinc-200/30 border border-black max-w-fit px-2 py-1 my-0 cursor-default">
       <IconSwitcher tech={tech} />
       <span>{tech}</span>
     </li>

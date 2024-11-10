@@ -1,5 +1,5 @@
 ---
-import "@fontsource-variable/inter"
+import "@fontsource-variable/hedvig-letters-serif"
 import "@fontsource/fira-mono"
 
 import BaseHead from "@components/head/BaseHead.astro"
@@ -20,7 +20,7 @@ const { title, description, image = "/placeholder-image.jpeg" } = Astro.props
     <BaseHead title={title} description={description} image={image} />
     <slot name="structured-data" />
   </head>
-  <body class="bg-zinc-800 text-zinc-100">
+  <body class="bg-white text-black">
     <Header client:load />
     <slot name="page-hero" />
     <main class="max-w-3xl mx-auto py-16 px-4 z-10">

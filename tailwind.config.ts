@@ -7,13 +7,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        sans: [
+          "Hedvig Letters Serif Variable",
+          ...defaultTheme.fontFamily.sans,
+        ],
         mono: ["Fira Mono", ...defaultTheme.fontFamily.mono],
       },
-    },
-    screens: {
-      xs: "512px",
-      ...defaultTheme.screens,
+      colors: {
+        highlight: "#d0021b",
+      },
+      screens: {
+        xs: "512px",
+      },
     },
   },
 } satisfies Config

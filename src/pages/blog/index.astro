@@ -13,6 +13,6 @@ const posts = (await getCollection("blog")).sort(
   title="Blog"
   description="Welcome to my personal blog, a place where I talk about technology and any other topics which interest me."
 >
-  <h1 class="text-center py-4">Blog</h1>
+  <h1 class="text-center py-4 text-4xl">Blog</h1>
   <List listItems={posts} slugPrefix="blog" />
 </MainLayout>
