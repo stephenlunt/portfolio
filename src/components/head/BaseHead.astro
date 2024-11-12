@@ -55,3 +55,13 @@ const { title, description, image } = Astro.props
   title="Word Checker Blog Feed"
   href={`${Astro.site}rss.xml`}
 />
+
+<!-- Theme -->
+<script is:inline>
+  document.documentElement.classList.toggle(
+    "dark",
+    localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches),
+  )
+</script>

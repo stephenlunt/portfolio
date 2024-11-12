@@ -30,7 +30,7 @@ const { listItems, slugPrefix } = Astro.props
         {item.data.tags && (
           <div class="flex flex-row flex-wrap gap-1">
             {item.data.tags.map((tag) => (
-              <div class="bg-zinc-200/30 px-2 py-0.5 mb-2 text-sm text-black border border-black">
+              <div class="bg-zinc-200/30 dark:bg-zinc-900/30 px-2 py-0.5 mb-2 text-sm border border-black dark:border-zinc-700">
                 {tag}
               </div>
             ))}

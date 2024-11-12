@@ -4,6 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "selector",
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +15,8 @@ export default {
         mono: ["Fira Mono", ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        highlight: "#d0021b",
+        "light-highlight": "#d0021b",
+        "dark-highlight": "#f97583",
       },
       screens: {
         xs: "512px",

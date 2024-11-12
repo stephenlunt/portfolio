@@ -42,7 +42,8 @@
         <div id="mug-handle"></div>
       </div>
       <div id="lamp-base">
-        <div id="switch" style={{ rotate: "-14deg" }}></div>
+        <div id="switch" style={{ rotate: "-14deg" }} class="animate-pulsate">
+        </div>
         <div id="lower-arm"></div>
         <div id="upper-arm"></div>
         <div id="lamp-house"></div>
@@ -54,25 +55,53 @@
 </div>
 
 <script is:inline>
+  function isDarkTheme() {
+    return (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    )
+  }
+
+  function toggleTheme(theme) {
+    if (theme === "dark") {
+      localStorage.setItem("theme", "dark")
+      document.documentElement.classList.add("dark")
+    } else {
+      localStorage.setItem("theme", "light")
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark")
+      }
+    }
+  }
+
   document.addEventListener(
     "DOMContentLoaded",
     () => {
-      let isLightOn = true
       const lightSwitch = document.getElementById("switch")
       const lampShadow = document.getElementById("lamp-shadow")
+      let isLightOn = isDarkTheme()
 
-      lightSwitch.addEventListener("click", () => {
+      function setLightAndTheme() {
         if (isLightOn) {
-          console.log("Lights off 🌚")
-          lightSwitch.style.rotate = "14deg"
-          lampShadow.style.display = "none"
-          isLightOn = false
-        } else {
-          console.log("Lights on 💡")
+          console.log("Light on 💡")
+          toggleTheme("dark")
           lightSwitch.style.rotate = "-14deg"
           lampShadow.style.display = "block"
+          isLightOn = false
+        } else {
+          console.log("Light off 🌚")
+          toggleTheme("light")
+          lightSwitch.style.rotate = "14deg"
+          lampShadow.style.display = "none"
           isLightOn = true
         }
+      }
+
+      setLightAndTheme()
+
+      lightSwitch.addEventListener("click", () => {
+        setLightAndTheme()
       })
     },
     { once: true },
@@ -332,7 +361,7 @@
     z-index: -1;
     height: 16px;
     width: 5px;
-    background-color: #d97706;
+    background-color: #b91c1c;
     border-radius: 1px;
     cursor: pointer;
   }

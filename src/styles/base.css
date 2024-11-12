@@ -24,12 +24,12 @@
   }
 
   a {
-    @apply underline underline-offset-4 decoration-zinc-700 decoration-2 break-words;
+    @apply underline underline-offset-4 decoration-zinc-700 dark:decoration-zinc-500 decoration-2 break-words;
   }
 
   a:hover,
   a:focus {
-    @apply decoration-zinc-500 transition-all duration-300;
+    @apply decoration-zinc-500 dark:decoration-zinc-400 transition-all duration-300;
   }
 
   ul {
@@ -50,15 +50,24 @@
   }
 
   pre {
-    @apply !bg-zinc-200/30 border border-zinc-300 p-4;
+    @apply !bg-zinc-200/30 dark:!bg-zinc-900/30 border border-zinc-300 dark:border-zinc-700 p-4;
   }
 
   code {
-    @apply text-highlight font-light break-words text-sm;
+    @apply text-light-highlight dark:text-dark-highlight font-light break-words text-sm;
   }
 
   .default-spacing p {
     @apply my-4 leading-7;
+  }
+
+  /* https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes */
+  html.dark .astro-code,
+  html.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 }
 
@@ -69,7 +78,7 @@
 
   .menu-link:hover,
   .menu-link:active {
-    @apply underline underline-offset-4 decoration-black decoration-2 transition-all duration-300;
+    @apply underline underline-offset-4 decoration-black dark:decoration-zinc-400 decoration-2 transition-all duration-300;
   }
 
   .stack-list {
@@ -85,18 +94,28 @@
   }
 
   .table {
-    @apply border border-zinc-300;
+    @apply border border-zinc-300 dark:border-zinc-700;
   }
 
   .table th {
-    @apply bg-zinc-200/30 border-r border-zinc-300;
+    @apply bg-zinc-200/30 dark:bg-zinc-900/30 border-r border-zinc-300 dark:border-zinc-700;
   }
 
   .table tr {
-    @apply table-row leading-[28px] border-b border-zinc-300;
+    @apply table-row leading-[28px] border-b border-zinc-300 dark:border-zinc-700;
   }
 
   .table td {
-    @apply relative text-center border-r border-zinc-300 px-2;
+    @apply relative text-center border-r border-zinc-300 dark:border-zinc-700 px-2;
+  }
+
+  @keyframes pulsate {
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-pulsate {
+    animation: pulsate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
