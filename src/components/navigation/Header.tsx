@@ -30,9 +30,6 @@ export default function Header() {
           <a href="/blog/" className="menu-link">
             Blog
           </a>
-          <a href="/projects/" className="menu-link">
-            Projects
-          </a>
           <a
             href="https://github.com/stephenlunt"
             target="_blank"

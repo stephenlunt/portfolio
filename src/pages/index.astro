@@ -6,34 +6,21 @@ import List from "@components/ux/List.astro"
 import PageHero from "@components/ux/PageHero.astro"
 import MainLayout from "@layouts/MainLayout.astro"
 
-const featuredProjects = (await getCollection("projects"))
-  .filter((p) => p.data.featured === true)
-  .sort(
-    (a, b) =>
-      (b.data.created === "Ongoing" ? Infinity : b.data.created.valueOf()) -
-      (a.data.created === "Ongoing" ? Infinity : a.data.created.valueOf()),
-  )
-
 const recentPosts = (await getCollection("blog")).sort(
   (a, b) => b.data.created.valueOf() - a.data.created.valueOf(),
 )
 ---
 
 <MainLayout
-  title="Stephen Lunt's Portfolio and Blog"
-  description="Hey, I'm Stephen. I'm a Full Stack Software Engineer located in London. Welcome to my portfolio and blog!"
+  title="Stephen Lunt"
+  description="Hey, I'm Stephen. I'm a Full Stack Software Engineer located in London. Welcome to my blog!"
 >
   <SiteStructuredData slot="structured-data" />
   <PageHero slot="page-hero" />
   <div class="mx-auto px-6 text-center text-xl">
     Hey, I'm Stephen 👋 I'm a Full Stack Software Engineer located in London.
-    Welcome to my portfolio and blog!
+    Welcome to my blog!
   </div>
-
-  <section class="my-16">
-    <h2 class="text-center text-3xl">Featured Projects</h2>
-    <List listItems={featuredProjects} slugPrefix="projects" />
-  </section>
 
   <section class="my-16">
     <h2 class="text-center text-3xl">Recent Blog Posts</h2>

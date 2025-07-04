@@ -23,6 +23,10 @@
     @apply font-medium my-2;
   }
 
+  p {
+    @apply !leading-8;
+  }
+
   a {
     @apply underline underline-offset-4 decoration-zinc-700 dark:decoration-zinc-500 decoration-2 break-words;
   }

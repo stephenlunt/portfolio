@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-  listItems: CollectionEntry<"projects">[] | CollectionEntry<"blog">[]
+  listItems: CollectionEntry<"blog">[]
   slugPrefix: string
 }
 
@@ -18,12 +18,10 @@ const { listItems, slugPrefix } = Astro.props
             <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
           </h2>
           <div>
-            {item.data.created === "Ongoing"
-              ? "Ongoing"
-              : item.data.created.toLocaleString("default", {
-                  month: "short",
-                  year: "numeric",
-                })}
+            {item.data.created.toLocaleString("default", {
+              month: "short",
+              year: "numeric",
+            })}
           </div>
         </div>
 
