@@ -1,12 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  listItems: CollectionEntry<"blog">[]
-  slugPrefix: string
+  listItems: CollectionEntry<"blog">[];
+  slugPrefix: string;
 }
 
-const { listItems, slugPrefix } = Astro.props
+const { listItems, slugPrefix } = Astro.props;
 ---
 
 <ul class="list-none m-0 p-0">

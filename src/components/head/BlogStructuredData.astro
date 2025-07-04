@@ -1,9 +1,9 @@
 ---
-import type { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"blog">
+type Props = CollectionEntry<"blog">;
 
-const { slug, data } = Astro.props
+const { slug, data } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
@@ -38,7 +38,7 @@ const schema = {
       caption: "Stephen Lunt",
     },
   },
-}
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />

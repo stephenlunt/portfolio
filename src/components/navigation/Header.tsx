@@ -1,12 +1,12 @@
-import { useState } from "react"
-import { IconContext } from "react-icons"
-import { IoMdClose, IoMdMenu } from "react-icons/io"
+import { useState } from "react";
+import { IconContext } from "react-icons";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleMenuOpen() {
-    setMenuOpen((prevValue) => !prevValue)
+    setMenuOpen((prevValue) => !prevValue);
   }
 
   return (
@@ -41,5 +41,5 @@ export default function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }

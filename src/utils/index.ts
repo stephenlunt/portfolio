@@ -1,1 +1,1 @@
-export * from "./estimate-reading-time"
+export * from "./estimate-reading-time";

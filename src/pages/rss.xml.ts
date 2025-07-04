@@ -1,10 +1,10 @@
-import rss from "@astrojs/rss"
-import type { APIRoute } from "astro"
-import { getCollection, type CollectionEntry } from "astro:content"
+import rss from "@astrojs/rss";
+import type { APIRoute } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export const GET: APIRoute = async (context) => {
-  const baseUrl = (context.site as URL).href
-  const posts: CollectionEntry<"blog">[] = await getCollection("blog")
+  const baseUrl = (context.site as URL).href;
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 
   return rss({
     title: "Stephen Lunt's Blog",
@@ -16,5 +16,5 @@ export const GET: APIRoute = async (context) => {
       pubDate: post.data.created,
       link: `${baseUrl}/blog/${post.slug}`,
     })),
-  })
-}
+  });
+};

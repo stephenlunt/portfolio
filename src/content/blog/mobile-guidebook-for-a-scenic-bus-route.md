@@ -2501,49 +2501,39 @@ _Appendix 6 contains a typed copy of the completed evaluation sheet from Partici
 - Date completed: 02/08/2023.
 
 1. What were your initial thoughts and feeling when opening the application for the first time?
-
    - Professional, like the colour scheme and very visual.
 
 2. Was the application easy to navigate and understand?
-
    - Very clear with straight to the point of the aim.
    - Links to each section was quick + easy. Some good information, especially with the option of the route guide clearly stating where the route will be taken.
 
 3. What features of the application did you find valuable and why?
-
    - Images of certain key stops which help with envisaging of what’s here. Great clear information of each stop and clear opening/closing times helped plan the day out.
    - Liked how the app showed where bus was on route.
 
 4. Was the application lacking any features that you think should be included?
-
    - Maps could be improved to show attraction better in result of bus stops.
 
 5. Did you find the application visually appealing?
-
    - Good use of images + colour scheme as they were inviting.
 
 6. Did you encounter any errors, bugs, crashes, or other problems during your interactions with the application?
-
    - Found that when clicking on an the attraction page was never ending after all information.
 
 7. Thinking about your time spent using the app during the AD122 ride, do you feel it enhanced your journey today? Why/why not?
-
    - Helped plan journey better as it shows what is exactly at each stop and what we can do there.
 
 8. During the trip, when and how did you find yourself using the application?
-
    - It was good prior to the trip however mostly used mid-way as the bus was in motion.
 
 9. Having tested the application, would you use this application again for the AD122 journey or other scenic bus routes if this application was publicly available and why?
 
-   - Yes, I would use this app again as its simple to use and navigate as well as being very user friendly.
+- Yes, I would use this app again as its simple to use and navigate as well as being very user friendly.
 
 10. Would you recommend the application to a friend or family member to use?
-
     - Yes!
 
 11. Additional comments/feedback.
-
     - Great app and very informative.
 
 ### Appendix 7: User Evaluation Sheet for Participant 2
@@ -2556,47 +2546,36 @@ _Appendix 7 contains a typed copy of the completed evaluation sheet from Partici
 - Date completed: 02/08/2023.
 
 1. What were your initial thoughts and feeling when opening the application for the first time?
-
    - Simple (not in a bad way) and easy to use/understand what the app does.
 
 2. Was the application easy to navigate and understand?
-
    - Yes, navigation was easy as there are not many links to click, it was quite intuitive to use.
 
 3. What features of the application did you find valuable and why?
-
    - The tracking screen was good to see where I was on the bus. Without it I wouldn’t really understand where I was and what was around me without using a map. Information on attractions also good, means I don’t need to search the web which can be time consuming.
 
 4. Was the application lacking any features that you think should be included?
-
    - More variety of attractions and stop info. Walking trails should be included considering the route. A map that can be interacted with would be nice, the current ones are too small to make sense of.
 
 5. Did you find the application visually appealing?
-
    - Yes, colours where bold and bright. Things like the tracker with the bus icon looked quite unique.
 
 6. Did you encounter any errors, bugs, crashes, or other problems during your interactions with the application?
-
    - Between The Sill and Vindolanda the tracker jumped between the two stops?
 
 7. Thinking about your time spent using the app during the AD122 ride, do you feel it enhanced your journey today? Why/why not?
-
    - Yes, made it simpler to have an app which contained everything in one place. Otherwise, it would be a hassle to find every attraction I wanted to visit.
 
 8. During the trip, when and how did you find yourself using the application?
-
    - Used it to follow along with the bus and view info on attractions.
 
 9. Having tested the application, would you use this application again for the AD122 journey or other scenic bus routes if this application was publicly available and why?
-
    - Yes, however more routes and more variety of attractions would make it better.
 
 10. Would you recommend the application to a friend or family member to use?
-
     - Yes, I could see people I know liking this.
 
 11. Additional comments/feedback.
-
     - No.
 
 ### Appendix 8: Incident Report from the User Evaluation
