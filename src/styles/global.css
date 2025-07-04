@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hedvig Letters Serif Variable", ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-mono: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono";
+
+  --breakpoint-xs: 512px;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   h1 {
@@ -58,7 +68,7 @@
   }
 
   code {
-    @apply text-light-highlight dark:text-dark-highlight font-light break-words text-sm;
+    @apply text-[#d0021b] dark:text-[#f97583] font-light break-words text-sm;
   }
 
   .default-spacing p {
@@ -75,51 +85,45 @@
   }
 }
 
-@layer components {
-  .menu-link {
-    @apply no-underline;
-  }
+.menu-link {
+  @apply no-underline;
+}
 
-  .menu-link:hover,
-  .menu-link:active {
-    @apply underline underline-offset-4 decoration-black dark:decoration-zinc-400 decoration-2 transition-all duration-300;
-  }
+.menu-link:hover,
+.menu-link:active {
+  @apply underline underline-offset-4 decoration-black dark:decoration-zinc-400 decoration-2 transition-all duration-300;
+}
 
-  .stack-list {
-    @apply flex flex-row flex-wrap gap-2 my-2 pb-4 px-0;
-  }
+.vertical-img {
+  @apply max-w-full sm:max-w-[50%] md:max-w-[30%] flex mx-auto;
+}
 
-  .vertical-img {
-    @apply max-w-full sm:max-w-[50%] md:max-w-[30%] flex mx-auto;
-  }
+.vertical-img-group {
+  @apply flex flex-col sm:flex-row sm:gap-4;
+}
 
-  .vertical-img-group {
-    @apply flex flex-col sm:flex-row sm:gap-4;
-  }
+.table {
+  @apply border border-zinc-300 dark:border-zinc-700;
+}
 
-  .table {
-    @apply border border-zinc-300 dark:border-zinc-700;
-  }
+.table th {
+  @apply bg-zinc-200/30 dark:bg-zinc-900/30 border-r border-zinc-300 dark:border-zinc-700;
+}
 
-  .table th {
-    @apply bg-zinc-200/30 dark:bg-zinc-900/30 border-r border-zinc-300 dark:border-zinc-700;
-  }
+.table tr {
+  @apply table-row leading-[28px] border-b border-zinc-300 dark:border-zinc-700;
+}
 
-  .table tr {
-    @apply table-row leading-[28px] border-b border-zinc-300 dark:border-zinc-700;
-  }
+.table td {
+  @apply relative text-center border-r border-zinc-300 dark:border-zinc-700 px-2;
+}
 
-  .table td {
-    @apply relative text-center border-r border-zinc-300 dark:border-zinc-700 px-2;
+@keyframes pulsate {
+  50% {
+    opacity: 0.8;
   }
+}
 
-  @keyframes pulsate {
-    50% {
-      opacity: 0.8;
-    }
-  }
-
-  .animate-pulsate {
-    animation: pulsate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+.animate-pulsate {
+  animation: pulsate 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

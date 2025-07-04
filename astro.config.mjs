@@ -1,21 +1,15 @@
 import mdx from "@astrojs/mdx"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
-import tailwind from "@astrojs/tailwind"
+import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import rehypeExternalLinks from "rehype-external-links"
 
 export default defineConfig({
   site: "https://stephen-lunt.dev",
-  integrations: [
-    sitemap(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    mdx(),
-  ],
+  integrations: [sitemap(), react(), mdx()],
   vite: {
+    plugins: [tailwindcss()],
     ssr: {
       // https://github.com/withastro/astro/issues/7629
       noExternal: ["react-icons"],
