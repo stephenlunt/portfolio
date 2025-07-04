@@ -1,8 +1,9 @@
+import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
@@ -15,6 +16,13 @@ export default defineConfig({
       noExternal: ["react-icons"],
     },
   },
+  image: {
+    service: passthroughImageService(),
+  },
+  output: "static",
+  adapter: cloudflare({
+    imageService: "passthrough",
+  }),
   markdown: {
     shikiConfig: {
       themes: {
