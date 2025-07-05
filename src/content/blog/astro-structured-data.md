@@ -2,6 +2,7 @@
 title: "How I add structured data markup to Astro sites"
 description: "A brief overall of structured data and how developers can add structured data markup to an Astro website through an example repository."
 created: "2024-01-23 21:00"
+updated: "2025-07-05 21:25"
 heroImage:
   url: "@assets/imgs/blog/astro-structured-data.jpeg"
   alt: "Astro structured data tutorial"
@@ -44,14 +45,14 @@ It follows a common pattern in Astro which is to have a `BaseHead.astro` compone
 
 ```astro
 ---
-import BaseHead from "@components/BaseHead.astro"
+import BaseHead from "@components/BaseHead.astro";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { title, description } = Astro.props as Props
+const { title, description } = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -80,16 +81,16 @@ Here is the code for our `WebsiteStructuredData` component.
 
 ```astro
 ---
-import { SITE_TITLE } from "@consts"
+import { SITE_TITLE } from "@consts";
 
-const pageUrl = new URL(Astro.url.pathname, Astro.site)
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: SITE_TITLE,
   url: pageUrl,
-}
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -101,8 +102,8 @@ In our example repo, we import the component to the home page `index.astro` and 
 
 ```astro
 ---
-import WebsiteStructuredData from "@components/WebsiteStructuredData.astro"
-import Layout from "@layouts/Layout.astro"
+import WebsiteStructuredData from "@components/WebsiteStructuredData.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Home" description="Example Astro site using structured data.">
@@ -121,14 +122,14 @@ Here is the code for doing this in an `ArticleStructuredData.astro` component fi
 
 ```astro
 ---
-import type { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<"blog">["data"]
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, createdAt, updatedAt, author, heroImage } =
-  Astro.props as Props
+  Astro.props as Props;
 
-const pageUrl = new URL(Astro.url.pathname, Astro.site)
+const pageUrl = new URL(Astro.url.pathname, Astro.site);
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -152,36 +153,38 @@ const structuredData = {
     description: author.bio,
     url: author.profileUrl,
   },
-}
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 ```
 
+If you require a word or character count for any of your structured data, check out my project [Word Checker](https://wordchecker.io/word-counter/). It's recommended you keep meta descriptions between 155-160 characters for search engine results. My word counter can be used to quickly verify this.
+
 Once again, we need to import this structured data file to our blog post page. This time, using dynamic rendering we can **pass the post data as props** to the component. If you're unfamiliar with this concept, I'd recommend Astro's docs on [generating routes for content collections](https://docs.astro.build/en/guides/content-collections/#generating-routes-from-content) to upskill.
 
 ```astro
 ---
-import type { GetStaticPaths } from "astro"
-import { Image } from "astro:assets"
-import { getCollection, type CollectionEntry } from "astro:content"
+import type { GetStaticPaths } from "astro";
+import { Image } from "astro:assets";
+import { getCollection, type CollectionEntry } from "astro:content";
 
-import ArticleStructuredData from "@components/ArticleStructuredData.astro"
-import FormattedDate from "@components/FormattedDate.astro"
-import Layout from "@layouts/Layout.astro"
+import ArticleStructuredData from "@components/ArticleStructuredData.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
 
 export const getStaticPaths = (async () => {
-  const blogPosts = await getCollection("blog")
+  const blogPosts = await getCollection("blog");
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: post,
-  }))
-}) satisfies GetStaticPaths
+  }));
+}) satisfies GetStaticPaths;
 
-type Props = CollectionEntry<"blog">
+type Props = CollectionEntry<"blog">;
 
-const post = Astro.props
-const { Content } = await post.render()
+const post = Astro.props;
+const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>

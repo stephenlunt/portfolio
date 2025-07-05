@@ -3,10 +3,10 @@ module.exports = {
   singleQuote: false,
   bracketSpacing: true,
   endOfLine: "lf",
-  semi: false,
+  semi: true,
   tabWidth: 2,
   useTabs: false,
-  trailingComma: "all",
+  trailingComma: "es5",
   printWidth: 80,
   plugins: [require.resolve("prettier-plugin-astro")],
   overrides: [
@@ -17,4 +17,4 @@ module.exports = {
       },
     },
   ],
-}
+};

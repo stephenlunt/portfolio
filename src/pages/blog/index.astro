@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 
-import List from "@components/ux/List.astro"
-import MainLayout from "@layouts/MainLayout.astro"
+import ArticleList from "@components/ux/ArticleList.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.created.valueOf() - a.data.created.valueOf(),
-)
+  (a, b) => b.data.created.valueOf() - a.data.created.valueOf()
+);
 ---
 
 <MainLayout
@@ -14,5 +14,5 @@ const posts = (await getCollection("blog")).sort(
   description="Welcome to my personal blog, a place where I talk about technology and any other topics which interest me."
 >
   <h1 class="text-center py-4 text-4xl">Blog</h1>
-  <List listItems={posts} slugPrefix="blog" />
+  <ArticleList listItems={posts} slugPrefix="blog" />
 </MainLayout>

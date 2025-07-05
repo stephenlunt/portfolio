@@ -1,25 +1,18 @@
-import mdx from "@astrojs/mdx"
-import react from "@astrojs/react"
-import sitemap from "@astrojs/sitemap"
-import tailwind from "@astrojs/tailwind"
-import { defineConfig } from "astro/config"
-import rehypeExternalLinks from "rehype-external-links"
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, passthroughImageService } from "astro/config";
+import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
   site: "https://stephen-lunt.dev",
-  integrations: [
-    sitemap(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    mdx(),
-  ],
+  integrations: [sitemap(), react(), mdx()],
   vite: {
-    ssr: {
-      // https://github.com/withastro/astro/issues/7629
-      noExternal: ["react-icons"],
-    },
+    plugins: [tailwindcss()],
+  },
+  image: {
+    service: passthroughImageService(),
   },
   markdown: {
     shikiConfig: {
@@ -39,4 +32,4 @@ export default defineConfig({
       ],
     ],
   },
-})
+});

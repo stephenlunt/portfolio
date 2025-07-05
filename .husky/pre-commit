@@ -3,8 +3,14 @@
 echo "🎨 Checking formatting..."
 pnpm run format:check
 
-echo "💡 TypeScript checking..."
+echo "💡 TS-Check..."
 pnpm run ts-check
 
-echo "🏗️ Building..."
+echo "✄ Running knip"
+pnpm run knip
+
+echo "🏁 Astro check..."
+pnpm run astro-check
+
+echo "🏗️ Checking build for errors..."
 pnpm run build

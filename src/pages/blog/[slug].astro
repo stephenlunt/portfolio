@@ -1,31 +1,31 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content"
+import { getCollection, type CollectionEntry } from "astro:content";
 
-import BlogStructuredData from "@components/head/BlogStructuredData.astro"
-import MainLayout from "@layouts/MainLayout.astro"
-import { estimateReadingTime } from "@utils"
+import BlogStructuredData from "@components/head/BlogStructuredData.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { estimateReadingTime } from "@utils";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog")
+  const posts = await getCollection("blog");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
-  }))
+  }));
 }
 
-type Props = CollectionEntry<"blog">
+type Props = CollectionEntry<"blog">;
 
-const post = Astro.props
-const { Content } = await post.render()
+const post = Astro.props;
+const { Content } = await post.render();
 
-const readingTime = estimateReadingTime(post.body)
+const readingTime = estimateReadingTime(post.body);
 
 const dateOptions: Intl.DateTimeFormatOptions = {
   weekday: "long",
   year: "numeric",
   month: "long",
   day: "numeric",
-}
+};
 ---
 
 <MainLayout

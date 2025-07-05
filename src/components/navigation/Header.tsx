@@ -1,12 +1,12 @@
-import { useState } from "react"
-import { IconContext } from "react-icons"
-import { IoMdClose, IoMdMenu } from "react-icons/io"
+import { useState } from "react";
+import { IconContext } from "react-icons";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleMenuOpen() {
-    setMenuOpen((prevValue) => !prevValue)
+    setMenuOpen((prevValue) => !prevValue);
   }
 
   return (
@@ -30,9 +30,6 @@ export default function Header() {
           <a href="/blog/" className="menu-link">
             Blog
           </a>
-          <a href="/projects/" className="menu-link">
-            Projects
-          </a>
           <a
             href="https://github.com/stephenlunt"
             target="_blank"
@@ -44,5 +41,5 @@ export default function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
