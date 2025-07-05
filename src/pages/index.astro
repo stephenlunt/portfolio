@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 
 import SiteStructuredData from "@components/head/SiteStructuredData.astro";
-import List from "@components/ux/List.astro";
+import ArticleList from "@components/ux/ArticleList.astro";
 import PageHero from "@components/ux/PageHero.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
@@ -24,6 +24,6 @@ const recentPosts = (await getCollection("blog")).sort(
 
   <section class="my-16">
     <h2 class="text-center text-3xl">Recent Blog Posts</h2>
-    <List listItems={recentPosts} slugPrefix="blog" />
+    <ArticleList listItems={recentPosts} slugPrefix="blog" />
   </section>
 </MainLayout>
