@@ -22,7 +22,7 @@
   "packageManager": "pnpm@8.7.6",
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^4.3.1",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
@@ -39,9 +39,9 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "@types/node": "^24.0.10",
+    "@types/node": "^24.0.15",
     "husky": "^9.1.7",
-    "knip": "^5.61.3",
+    "knip": "^5.62.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.8.3"
