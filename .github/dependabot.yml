@@ -11,12 +11,6 @@ updates:
       interval: "weekly"
       day: "sunday"
     groups:
-      dependencies:
-        patterns:
-          - "*"
-        exclude-patterns:
-          - "astro"
-          - "@astro/*"
       astro:
         patterns:
           - "astro"
