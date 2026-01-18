@@ -42,7 +42,7 @@
     "@types/node": "^24.0.10",
     "husky": "^9.1.7",
     "knip": "^5.80.2",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.8.3"
   }
