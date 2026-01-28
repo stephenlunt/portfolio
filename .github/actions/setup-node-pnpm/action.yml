@@ -1,4 +1,5 @@
 name: Setup Node.js & pnpm
+description: Setup node and pnpm deps
 
 runs:
   using: composite
