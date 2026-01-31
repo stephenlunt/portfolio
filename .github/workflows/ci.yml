@@ -13,7 +13,7 @@ jobs:
       contents: read
     steps:
       - name: Check out code using Git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install tools & dependencies
         uses: ./.github/actions/setup-node-pnpm
