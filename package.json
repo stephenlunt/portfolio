@@ -22,8 +22,8 @@
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/react": "^5.0.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/hedvig-letters-serif": "^5.2.6",
