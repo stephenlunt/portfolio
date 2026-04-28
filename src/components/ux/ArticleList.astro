@@ -15,7 +15,7 @@ const { listItems, slugPrefix } = Astro.props;
       <li class="pb-4">
         <div class="flex flex-row flex-wrap justify-between items-baseline pb-2">
           <h2 class="mb-1">
-            <a href={`/${slugPrefix}/${item.slug}/`}>{item.data.title}</a>
+            <a href={`/${slugPrefix}/${item.id}/`}>{item.data.title}</a>
           </h2>
           <div>
             {item.data.created.toLocaleString("default", {
