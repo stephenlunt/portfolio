@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.8(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@6.0.3)
+        version: 0.9.8(prettier-plugin-astro@1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3))(prettier@3.8.3)(typescript@6.0.3)
       '@astrojs/mdx':
         specifier: ^7.0.8
         version: 7.0.8(astro@7.3.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.12.2)(jiti@2.6.1)(yaml@2.8.3))
@@ -70,8 +70,8 @@ importers:
         specifier: ^3.7.4
         version: 3.8.3
       prettier-plugin-astro:
-        specifier: ^0.14.1
-        version: 0.14.1
+        specifier: ^1.0.0
+        version: 1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3)
       typescript:
         specifier: ^6.0.0
         version: 6.0.3
@@ -1168,6 +1168,9 @@ packages:
     resolution: {integrity: sha512-6hIU3RQu45B+VNTY4Ru8ppFwjVS/S5qwYyGhBotmjxfEKk41I2DlGtRfGJndZ5+6lneE2pwloqunlOyZuX/XAw==}
     cpu: [x64]
     os: [win32]
+
+  '@prettier/parse-srcset@3.1.0':
+    resolution: {integrity: sha512-FIRv2rZotO9NP/r66taYqD1zICpPiBbrECqjKV/xqNotqDxF7fLzzUeK+1RSRx9Tenk0DajR/GcRmTJ2qtHaKQ==}
 
   '@rolldown/binding-android-arm-eabi@1.2.9':
     resolution: {integrity: sha512-tNISae1QEf/vkb3xkRcjV5SEdzPE97We5IVaa2Z8jSszQPZ8U60B/YCYpw4QI7VidYsBtKavczXf+DyDs9WGxw==}
@@ -2618,9 +2621,11 @@ packages:
     resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-plugin-astro@0.14.1:
-    resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
-    engines: {node: ^14.15.0 || >=16.0.0}
+  prettier-plugin-astro@1.0.1:
+    resolution: {integrity: sha512-FKLtmNgyAoUbUixxmgkyO9ZMjEWCpHgMLtci8IakhCIzr8b+ML9YssBqsMfNoDdd/iE27BixwBZSq2amWDwpFQ==}
+    engines: {node: '>=22.12.0'}
+    peerDependencies:
+      prettier: ^3.5.3
 
   prettier@3.8.3:
     resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
@@ -2763,8 +2768,9 @@ packages:
   s.color@0.0.15:
     resolution: {integrity: sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA==}
 
-  sass-formatter@0.7.9:
-    resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
+  sass-formatter@0.8.0:
+    resolution: {integrity: sha512-Nf4eMGE2O5vnJG7KPCRyksWS9gVKSYoUWtPeMXRRxwZSPVQhSGtL602xVYS65LvMkHmkvKa7xpauF0+/5pPwrg==}
+    hasBin: true
 
   satteri@0.10.5:
     resolution: {integrity: sha512-Ao1LKpAEa9Wdg0otgbVKViZHEq9ebdXe4DMrp3s9vQAU0HNIuHnFEuMuOcm0ZIXyV0Yzxj91NvhLpvXZJO/5ZQ==}
@@ -3297,9 +3303,9 @@ packages:
 
 snapshots:
 
-  '@astrojs/check@0.9.8(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@6.0.3)':
+  '@astrojs/check@0.9.8(prettier-plugin-astro@1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3))(prettier@3.8.3)(typescript@6.0.3)':
     dependencies:
-      '@astrojs/language-server': 2.16.6(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@6.0.3)
+      '@astrojs/language-server': 2.16.6(prettier-plugin-astro@1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3))(prettier@3.8.3)(typescript@6.0.3)
       chokidar: 4.0.3
       kleur: 4.1.5
       typescript: 6.0.3
@@ -3394,7 +3400,7 @@ snapshots:
     dependencies:
       picomatch: 4.0.4
 
-  '@astrojs/language-server@2.16.6(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@6.0.3)':
+  '@astrojs/language-server@2.16.6(prettier-plugin-astro@1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3))(prettier@3.8.3)(typescript@6.0.3)':
     dependencies:
       '@astrojs/compiler': 2.13.1
       '@astrojs/yaml2ts': 0.2.3
@@ -3416,7 +3422,7 @@ snapshots:
       vscode-uri: 3.1.0
     optionalDependencies:
       prettier: 3.8.3
-      prettier-plugin-astro: 0.14.1
+      prettier-plugin-astro: 1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3)
     transitivePeerDependencies:
       - typescript
 
@@ -4222,6 +4228,8 @@ snapshots:
 
   '@oxc-resolver/binding-win32-x64-msvc@11.19.1':
     optional: true
+
+  '@prettier/parse-srcset@3.1.0': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.9':
     optional: true
@@ -6020,11 +6028,15 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-astro@0.14.1:
+  prettier-plugin-astro@1.0.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.8.3):
     dependencies:
-      '@astrojs/compiler': 2.13.1
+      '@astrojs/compiler-rs': 0.4.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)
+      '@prettier/parse-srcset': 3.1.0
       prettier: 3.8.3
-      sass-formatter: 0.7.9
+      sass-formatter: 0.8.0
+    transitivePeerDependencies:
+      - '@emnapi/core'
+      - '@emnapi/runtime'
 
   prettier@3.8.3: {}
 
@@ -6258,7 +6270,7 @@ snapshots:
 
   s.color@0.0.15: {}
 
-  sass-formatter@0.7.9:
+  sass-formatter@0.8.0:
     dependencies:
       suf-log: 2.5.3
 
