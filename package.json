@@ -44,6 +44,6 @@
     "knip": "^6.0.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^6.0.0"
+    "typescript": "^7.0.0"
   }
 }
