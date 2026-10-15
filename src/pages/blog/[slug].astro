@@ -35,17 +35,13 @@ const dateOptions: Intl.DateTimeFormatOptions = {
 >
   <BlogStructuredData {...post} slot="structured-data" />
   <h1>{post.data.title}</h1>
-  <div
-    class="flex flex-col sm:flex-row items-baseline gap-4 py-4 mb-4 border-b border-black dark:border-zinc-700"
-  >
+  <div class="flex flex-col sm:flex-row items-baseline gap-4 py-4 mb-4 border-b border-black dark:border-zinc-700">
     <div class="flex flex-row items-center">
       <span>📆</span>
       <p class="!ml-2">
-        {
-          post.data.updated
-            ? post.data.updated.toLocaleString("en-GB", dateOptions)
-            : post.data.created.toLocaleString("en-GB", dateOptions)
-        }
+        {post.data.updated
+          ? post.data.updated.toLocaleString("en-GB", dateOptions)
+          : post.data.created.toLocaleString("en-GB", dateOptions)}
       </p>
     </div>
     <div class="flex flex-row items-center">
