@@ -1,3 +1,4 @@
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -21,14 +22,16 @@ export default defineConfig({
         dark: "github-dark",
       },
     },
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-          rel: ["noopener", "noreferrer"],
-        },
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            target: "_blank",
+            rel: ["noopener", "noreferrer"],
+          },
+        ],
       ],
-    ],
+    }),
   },
 });
