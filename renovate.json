@@ -4,11 +4,9 @@
   "lockFileMaintenance": { "enabled": true, "automerge": true },
   "platformAutomerge": true,
   "automergeStrategy": "squash",
-  "prConcurrentLimit": 2,
-  "branchConcurrentLimit": 2,
-  "prHourlyLimit": 1,
+  "prHourlyLimit": 0,
   "internalChecksFilter": "strict",
-  "prCreation": "not-pending",
+  "prCreation": "immediate",
   "packageRules": [
     {
       "matchDatasources": ["npm"],
